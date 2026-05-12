@@ -37,7 +37,7 @@ SAY ~Un instant ? J'ai du mal comprendre, vous me demandez de partir?! Vous deve
 !AreaCheck("AR1506")
 !AreaCheck("AR1507")
 !AreaCheck("AR1508")
-!AreaCheck("AR0710")~ + ~Nos routes doivent se séparer un moment, retrouvez moi à la promenade de Walkyne.~ DO ~SetGlobal("CKLysreKickedOut","GLOBAL",1) EscapeArea() MoveGlobal("AR710","CKLysre",[481.182])~ EXIT
+!AreaCheck("AR0710")~ + ~Nos routes doivent se séparer un moment, retrouvez moi à la promenade de Waukyne.~ DO ~SetGlobal("CKLysreKickedOut","GLOBAL",1) MoveGlobal("AR0710","CKLysre",[481.182]) EscapeArea()~ EXIT
 + ~!AreaCheck("AR0301")
 !AreaCheck("AR0302")
 !AreaCheck("AR0303")

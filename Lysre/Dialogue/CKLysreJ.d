@@ -4,7 +4,7 @@ BEGIN CKLysreJ
 //Lancer la quête ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 IF ~Global("CKquete1","GLOBAL",1)~ THEN BEGIN CKlancerquete1
-SAY ~Oh, <CHARNAME>. Accordez-moi un peu de temps voulez vous? Voyez, j'ai bien réfléchi pendant que vous mortels vous exposiez à la faiblesse de l'étreinte de Morphée. Cet endroit où nous avons massacré des païens... l'antre de l'oeil... C'est un endroit délicieux... plein des marques d'un récent massacre. A proximité d'une source de vivres intéressant, et ce curieux village plein de chair en putréfaction. C'est un endroit idéal pour y bâtir un temple en mon honneur, et en l'honneur de la mère des dragons Tiamat. Je vous invite donc à m'aider dans cette glorieuse tâche que de transformer un coin putride en adorable petit nid.~
+SAY ~Oh, <CHARNAME>. Accordez-moi un peu de temps voulez vous? Voyez, j'ai bien réfléchi pendant que vous mortels vous exposiez à la faiblesse de l'étreinte de Morphée. Cet endroit où nous avons massacré des païens... l'antre de l’œil... C'est un endroit délicieux... plein des marques d'un récent massacre. A proximité d'une source de vivres intéressant, et ce curieux village plein de chair en putréfaction. C'est un endroit idéal pour y bâtir un temple en mon honneur, et en l'honneur de la mère des dragons Tiamat. Je vous invite donc à m'aider dans cette glorieuse tâche que de transformer un coin putride en adorable petit nid.~
 ++ ~D'accord, comment compte tu t'y prendre?~ + CKquete1.1
 ++ ~Certainement pas~ + CKquete1refus
 END
@@ -51,7 +51,7 @@ END
 
 //Ecaille Ombre    AR1402
 IF ~Global("CKecailleN","GLOBAL",1)~ THEN BEGIN CKMangerledragonnoir
- SAY ~Ha... voilà une creature stupide affiliee au mauvais maitre qui trepasse. Notez qu'il n'a pas le mérite d'être issu de la noble et splendide lignée de notre Mère. Je dois avouer que je suis curieuse du goût de sa chair... Quel goût a l'ombre... <CHARNAME>, laissez moi le manger je vous prie, pour l'expérience Il n'en restera plus grand chose, sa chair, son sang, ses os, ses entrailles. Tout ira a Tiamat.~
+ SAY ~Ha... voilà une créature stupide affiliée au mauvais maître qui trépasse. Notez qu'il n'a pas le mérite d'être issu de la noble et splendide lignée de notre Mère. Je dois avouer que je suis curieuse du goût de sa chair... Quel goût a l'ombre... <CHARNAME>, laissez moi le manger je vous prie, pour l'expérience Il n'en restera plus grand chose, sa chair, son sang, ses os, ses entrailles. Tout ira a Tiamat.~
 ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleN","GLOBAL",2) TakePartyItem("SCALEB") DestroyItem("SCALEB") AddSpecialAbility("spsd02") AddSpecialAbility("spsd02") AddSpecialAbility("spsd02") TakeItemReplace("CKpatte2","CKpatte1","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKecailleN","GLOBAL",3) ~ + CKMOERnon
 END
@@ -65,13 +65,13 @@ END
 //Sang dragon argenté
 IF ~!PartyHasItem("LEAT22") Global("CKsangDB","GLOBAL",1)~ THEN BEGIN CKMangerledragonblanc
  SAY ~L'idée de manger une des filles de Bahamut me répugne quelque peu... mais je doute que Tiamat pardonne cette hésitation au moment de montrer qui sont les Véritables Dragons. <CHARNAME>? Laissez moi dévorer ce dragon je vous prie.~
-++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKsangDB","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H")AddSpecialAbility("CKsoin") ~ + PriereTiamatRepas
+++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKsangDB","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H") AddSpecialAbility("CKsoin") ~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKsangDB","GLOBAL",3) ~ + CKMOERnon
 END
 
 IF ~PartyHasItem("LEAT22") Global("CKsangDB","GLOBAL",1)~ THEN BEGIN CKMangerledragonblanc2
  SAY ~L'idée de manger une des filles de Bahamut me répugne quelque peu... mais je doute que Tiamat pardonne cette hésitation au moment de montrer qui sont les Véritables Dragons. <CHARNAME>? Laissez moi dévorer ce dragon je vous prie.~
-~~ ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKsangDB","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H")AddSpecialAbility("CKsoin") ~ + CKMangerledragonblanc3
+~~ ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKsangDB","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H") AddSpecialAbility("CKsoin") ~ + CKMangerledragonblanc3
 ++ ~Certainement pas~ DO ~SetGlobal("CKsangDB","GLOBAL",3) ~ + CKMOERnon
 END
 
@@ -89,7 +89,7 @@ END
 //Ecailles dragon blanc
 IF ~Global("CKecailleDBl","GLOBAL",1)~ THEN BEGIN CKMangerledragonblanc
  SAY ~Voilà les restes d'un congénère... Je ne suis pas surprise, les Blancs sont les plus faibles de la portée... Donc ils sont plus susceptibles de se faire avoir par une espèce inférieure. Ils ne brillent pas par leur intelligence vous savez? Je peux manger ces écailles <CHARNAME>?~
-++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleDBl","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H")TakeItemReplace("CKaillb2","CKaillb1","CKLysre")~ + PriereTiamatRepas
+++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleDBl","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H") TakeItemReplace("CKaillb2","CKaillb1","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKecailleDBl","GLOBAL",3) ~ + CKMOERnon
 END
 
@@ -97,7 +97,7 @@ END
 IF ~Global("CKecailleB","GLOBAL",1)~ THEN BEGIN CKMangerledragonblanc
  SAY ~Oui... oui. OUI ! TU ES CREVÉ ! HAHAHAHAHAHAHAHA ! ENFIN ! Enfin... Aaaaah, la douce sensation de la vengeance... Louée soyez vous, reine des dragons, pour m'avoir offert ce jour. Vous me l'aviez promis, et aujourd'hui, sa dépouille est sur le sol. Prenez son âme, oh Tiamat.~
 ++ ~Silence Lysre, ce corps est à moi !~ DO ~SetGlobal("CKecailleB","GLOBAL",2) TakePartyItem("COMPON19") DestroyItem("COMPON19")~ + Lepacteestla
-++ ~*Ne rien dire*~ DO ~SetGlobal("CKecailleb","GLOBAL",3) TakePartyItem("COMPON19") DestroyItem("COMPON19")TakeItemReplace("CKaillc2","CKaillc1","CKLysre") ~ + PriereTiamatRepas
+++ ~*Ne rien dire*~ DO ~SetGlobal("CKecailleb","GLOBAL",3) TakePartyItem("COMPON19") DestroyItem("COMPON19") TakeItemReplace("CKaillc2","CKaillc1","CKLysre") ~ + PriereTiamatRepas
 END
 
 IF ~Global("CKecailleB","GLOBAL",2)~ THEN BEGIN Lepacteestla
@@ -112,7 +112,7 @@ IF ~~ THEN BEGIN CKMOERnon
 END
 //Prière/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 IF ~~ THEN BEGIN PriereTiamatRepas
- SAY ~Louée soyez vous, oh révérée Tiamat. Ô, grande Reine des Dragons. Permettez à votre disciple de poursuivre sur votre voie, appréciez cette offrande en votre nom, en votre honneur. Soyez respectée, soyez crainte vous qui règnerez un jour sur les plans.~
+ SAY ~Louée soyez vous, oh révérée Tiamat. Ô, grande Reine des Dragons. Permettez à votre disciple de poursuivre sur votre voie, appréciez cette offrande en votre nom, en votre honneur. Soyez respectée, soyez crainte vous qui régnerez un jour sur les plans.~
 IF ~~  +PriereTiamatRepas2
 END
 
@@ -127,21 +127,21 @@ IF ~~ DO ~~  EXIT
 END
 
 //Manger démon/////////////////////////////////////////////////////////
-//Coeur du plan des enfers
+//cœur du plan des enfers
 IF ~Global("CKdemonC","GLOBAL",1)~ THEN BEGIN CKMangerlecoeur
- SAY ~Mmmrr... Un coeur palpitant... Il fait écho aux miens... Oh...<CHARNAME>? Laissez-moi dévorer ce coeur je vous prie. Qu'est ce que ça peut vous coûter d'en chercher un autre pour la sphère ?~
+ SAY ~Mmmrr... Un cœur palpitant... Il fait écho aux miens... Oh...<CHARNAME>? Laissez-moi dévorer ce cœur je vous prie. Qu'est ce que ça peut vous coûter d'en chercher un autre pour la sphère ?~
 ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKdemonC","GLOBAL",2) TakePartyItem("MISC6M") DestroyItem("MISC6M") TakeItemReplace("CKcoeur2","CKcoeur1","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKdemonC","GLOBAL",3) ~ + CKMOERnon
 END
 
 //Prière/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 IF ~~ THEN BEGIN PriereTiamatRepasD
- SAY ~Louée soyez vous, oh révérée Tiamat. Ô, grande Reine des Dragons. Permettez à votre disciple de poursuivre sur votre voie, appréciez cette offrande en votre nom, en votre honneur. Soyez respectée, soyez crainte vous qui règnerez un jour sur les plans.~
+ SAY ~Louée soyez vous, oh révérée Tiamat. Ô, grande Reine des Dragons. Permettez à votre disciple de poursuivre sur votre voie, appréciez cette offrande en votre nom, en votre honneur. Soyez respectée, soyez crainte vous qui régnerez un jour sur les plans.~
 IF ~~  +PriereTiamatRepasD2
 END
 
 IF ~~ THEN BEGIN PriereTiamatRepasD2
- SAY ~*Lysre plonge son museau dans la cage thoracique du démon, elle en sort le coeur encore palpitant du démon. Elle produit une sorte de ronronnement de plaisir, alors que le coeur s'enfonce lentement dans sa gorge. Etrangement, le coeur disproportionné glisse sans le moindre souci dans la minuscule dragonne.*~
+ SAY ~*Lysre plonge son museau dans la cage thoracique du démon, elle en sort le cœur encore palpitant du démon. Elle produit une sorte de ronronnement de plaisir, alors que le cœur s'enfonce lentement dans sa gorge. Étrangement, le cœur disproportionné glisse sans le moindre souci dans la minuscule dragonne.*~
 IF ~~  +PriereTiamatRepasD3
 END
 
@@ -340,7 +340,7 @@ END
 // Built-in reactions
 
 EXTEND_BOTTOM TRGYP02 2
-IF ~!InPartySlot(LastTalkedToBy,0) Name("CKLysre",LastTalkedToBy)~ EXTERN TRGYP02 CKLysreTRGYP02
+IF ~!InPartySlot(LastTalkedToBy,0) Name("CKLysre",LastTalkedToBy) !StateCheck("CKLysre",CD_STATE_NOTVALID)~ EXTERN TRGYP02 CKLysreTRGYP02
 END
 
 CHAIN TRGYP02 CKLysreTRGYP02
@@ -437,7 +437,7 @@ SAY ~Alors que vous approchez de Lysre, elle souffle une petite brume empoisonn�
 + ~RandomNum(5,4) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + ~Penses tu que nous avons une chance contre Irenicus ?~ + CKLysre13.4
 + ~RandomNum(5,5) GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + ~Penses tu que nous avons une chance contre Irenicus ?~ + CKLysre13.5
 + ~Global("CKacide","GLOBAL",1)~ + ~Donnes moi un peu de ton acide s'il te plaît ?~ + CKAcideOUI
-+ ~Global("CKacide","GLOBAL",2)~ + ~Donnes moi un peu de ton acide s'il te plait ?~ + CKAcideNON
++ ~Global("CKacide","GLOBAL",2)~ + ~Donnes moi un peu de ton acide s'il te plaît ?~ + CKAcideNON
 END
 
 //Acide
@@ -486,7 +486,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre0.5
-SAY ~La curiosité des bipèdes... J'aime les contrats, mais vous le savez déjà. Il y a quelque chose de splendide dans la mise en place d'un contrat avec un mortel. Chaque mot compte. Plus d'une fois j'ai eu l'occasion de devorer un idiot, ou une idiote qui n'avait pas eu l'intelligence de voir un piege entre mes mots. Vous, c'est différent, je sens que votre route conduit à une proie que je convoite. Vous ne risquez rien.~
+SAY ~La curiosité des bipèdes... J'aime les contrats, mais vous le savez déjà. Il y a quelque chose de splendide dans la mise en place d'un contrat avec un mortel. Chaque mot compte. Plus d'une fois j'ai eu l'occasion de dévorer un idiot, ou une idiote qui n'avait pas eu l'intelligence de voir un piège entre mes mots. Vous, c'est différent, je sens que votre route conduit à une proie que je convoite. Vous ne risquez rien.~
 IF ~~ EXIT
 END
 
@@ -512,7 +512,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre1.5
-SAY ~Voyant que l'occasion est au repos, Lysre se pose au sol et étend un moment ses ailes, elle semble tres occupee par l'examen de ses écailles, mais vous remarquez qu'elle est attentive à ce qui l'entoure, puisqu'elle vous fixe droit dans les yeux.~
+SAY ~Voyant que l'occasion est au repos, Lysre se pose au sol et étend un moment ses ailes, elle semble très occupée par l'examen de ses écailles, mais vous remarquez qu'elle est attentive à ce qui l'entoure, puisqu'elle vous fixe droit dans les yeux.~
 IF ~~ EXIT
 END
 
@@ -534,7 +534,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre2.4
-SAY ~Celui qui est capable de te tromper une fois reste un traitre pour toujours.~
+SAY ~Celui qui est capable de te tromper une fois reste un traître pour toujours.~
 IF ~~ EXIT
 END
 
@@ -545,12 +545,12 @@ END
 
 //Enfant de Bhaal////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 IF ~~ CKLysre3.1
-SAY ~Les enfants de Bhaal... Je ne compte plus les troubles prophecies que j'ai entendu à votre sujet. Je dirais que vous êtes intéressants, après tout, c'est par curiosité sur ton statut que je t'accorde le droit de me parler. Tu n'es pas tout a fait un simple bipède.~
+SAY ~Les enfants de Bhaal... Je ne compte plus les troubles prophétique que j'ai entendu à votre sujet. Je dirais que vous êtes intéressants, après tout, c'est par curiosité sur ton statut que je t'accorde le droit de me parler. Tu n'es pas tout a fait un simple bipède.~
 IF ~~ EXIT
 END
 
 IF ~~ CKLysre3.2
-SAY  ~Tu es membre d'une famille amusante <CHARNAME>. Une essence divine court dans tes veines, j'avoue donc m'intéresser à ce que vous pouvez faire de votre existence. Combien de tes frères et soeur tuerez vous au nom de ce sang.~
+SAY  ~Tu es membre d'une famille amusante <CHARNAME>. Une essence divine court dans tes veines, j'avoue donc m'intéresser à ce que vous pouvez faire de votre existence. Combien de tes frères et sœur tuerez vous au nom de ce sang.~
 IF ~~ EXIT
 END
 
@@ -560,7 +560,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre3.4
-SAY ~Pff. Être un enfant de Bhaal ne fait pas de vous un être exceptionnel <CHARNAME>, cela vous donne une disposition tu vois. Vous pouvez en faire quelque chose, ou rien du tout. J'ai déjà voyagé avec une fille de Bhaal par le passé. Une sotte qui s'etait perdue dans la folie, partagee entre sa passion pour le meurtre de ceux qu'elle croisait et sa repugnance a s'y resoudre. Nous avons voyagé ensemble un an, elle a croisé une lame et elle est morte. Ses yeux était délicieux.~
+SAY ~Pff. Être un enfant de Bhaal ne fait pas de vous un être exceptionnel <CHARNAME>, cela vous donne une disposition tu vois. Vous pouvez en faire quelque chose, ou rien du tout. J'ai déjà voyagé avec une fille de Bhaal par le passé. Une sotte qui s’était perdue dans la folie, partagée entre sa passion pour le meurtre de ceux qu'elle croisait et sa répugnance a s'y résoudre. Nous avons voyagé ensemble un an, elle a croisé une lame et elle est morte. Ses yeux était délicieux.~
 IF ~~ EXIT
 END
 
@@ -629,7 +629,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre6.2
-SAY ~Sans même prévenir, Lysre plante ses crocs dans votre main, laissant son venin froler la plaie avant de vous lacher~
+SAY ~Sans même prévenir, Lysre plante ses crocs dans votre main, laissant son venin frôler la plaie avant de vous lâcher~
 IF ~~ EXIT
 END
 
@@ -670,7 +670,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre7.5
-SAY ~Lysre vous évite avec grâce, puis elle se pose sur votre tête en silence. Le message derrière sa manoeuvre n'est pas des plus clairs. Elle s'esquive en silence.~
+SAY ~Lysre vous évite avec grâce, puis elle se pose sur votre tête en silence. Le message derrière sa manœuvre n'est pas des plus clairs. Elle s'esquive en silence.~
 IF ~~ EXIT
 END
 
@@ -733,7 +733,7 @@ IF ~~ EXIT
 END
 
 IF ~~ CKLysre12.2
-SAY ~Si l'on compare cet endroit aux enfers, ça reste un endroit tout à fait a mon gout.~
+SAY ~Si l'on compare cet endroit aux enfers, ça reste un endroit tout à fait a mon goût.~
 IF ~~ EXIT
 END
 

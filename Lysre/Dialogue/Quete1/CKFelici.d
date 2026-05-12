@@ -26,12 +26,12 @@ IF ~~ THEN BEGIN CKQ4
   IF ~~ DO ~SetGlobal("CKquete1","GLOBAL",3)~  EXIT
 END
 
-IF ~Global("CKquete1","GLOBAL",3)!Partyhasitem("CKclef")~ THEN BEGIN CK5
+IF ~Global("CKquete1","GLOBAL",3)!PartyHasItem("CKclef")~ THEN BEGIN CK5
   SAY ~Alors cette clef ?~
   IF ~~ THEN REPLY ~Je vais te trouver ca~ EXIT
 END
 
-IF ~Global("CKquete1","GLOBAL",3)Partyhasitem("CKclef")~ THEN BEGIN CKQ5fin
+IF ~Global("CKquete1","GLOBAL",3)PartyHasItem("CKclef")~ THEN BEGIN CKQ5fin
   SAY ~Alors cette clef ?~
   IF ~~ THEN REPLY ~La voici~ GOTO CKQ5fin2
   IF ~~ THEN REPLY ~Je vais te trouver ca~ EXIT

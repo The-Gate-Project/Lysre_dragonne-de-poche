@@ -102,8 +102,8 @@ END
 
 //Aerie   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #10
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Aerie")
+See("Aerie")
 !StateCheck("Aerie",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreAerieToB1","GLOBAL",0)~ THEN BAERIE25 CKLysreAerieToB1
@@ -121,8 +121,8 @@ EXIT
 
 //Anomen   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #10
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Anomen")
+See("Anomen")
 !StateCheck("Anomen",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreAnomenToB1","GLOBAL",0)~ THEN BANOME25 CKLysreAnomenToB1
@@ -138,8 +138,8 @@ EXIT
 
 //Cernd   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #1
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Cernd")
+See("Cernd")
 !StateCheck("Cernd",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreCerndToB1","GLOBAL",0)~ THEN BCERND25 CKLysreCerndToB1
@@ -154,8 +154,8 @@ EXIT
 
 //Edwin   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Edwin")
+See("Edwin")
 !StateCheck("Edwin",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreEdwinToB1","GLOBAL",0)~ THEN BEDWIN25 CKLysreEdwinToB1
@@ -170,8 +170,8 @@ EXIT
 
 //Imoen   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Imoen2")
+See("Imoen2")
 !StateCheck("Imoen2",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 AreaType(CITY)
@@ -188,8 +188,8 @@ EXIT
 
 //Jaheira   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #10
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Jaheira")
+See("Jaheira")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreJaheiraToB1","GLOBAL",0)~ THEN BJAHEI25 CKLysreJaheiraToB1
@@ -206,8 +206,8 @@ EXIT
 
 //Jan   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Jan")
+See("Jan")
 !StateCheck("Jan",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreJanToB1","GLOBAL",0)~ THEN BJAN25 CKLysreJanToB1
@@ -222,8 +222,9 @@ EXIT
 
 //Korgan   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Korgan")
+See("Korgan")
+!StateCheck("Korgan",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreKorganToB1","GLOBAL",0)~ THEN BKORGA25 CKLysreKorganToB1
 @99
@@ -253,8 +254,8 @@ EXIT
 
 //Minsc   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Minsc")
+See("Minsc")
 !StateCheck("Minsc",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreMinscToB1","GLOBAL",0)~ THEN BMINSC25 CKLysreMinscToB1
@@ -272,6 +273,7 @@ CHAIN
 IF ~InParty("Nalia")
 See("Nalia")
 !StateCheck("Nalia",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreNaliaToB1","GLOBAL",0)~ THEN BCKLys25 CKLysreNaliaToB1
 @120
 DO ~SetGlobal("CKLysreNaliaToB1","GLOBAL",1)~
@@ -282,8 +284,8 @@ EXIT
 
 //Sarevok   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
-~InParty("CKLysre")
-See("CKLysre")
+~InParty("Sarevok")
+See("Sarevok")
 !StateCheck("Sarevok",CD_STATE_NOTVALID)
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 Global("CKLysreSarevokToB2","GLOBAL",0)~ THEN BSAREV25 CKLysreSarevokToB2
@@ -299,7 +301,7 @@ EXIT
 //Valygar   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #5
 ~InParty("CKLysre")
-See("CKLysre")
+See("Valygar")
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 !StateCheck("Valygar",CD_STATE_NOTVALID)
 Global("CKLysreValygarToB2","GLOBAL",0)~ THEN BVALYG25 CKLysreValygarToB2
@@ -323,9 +325,9 @@ EXIT
 
 //Viconia   ///////////////////////////////////////////////////////////////////////////
 CHAIN IF WEIGHT #10
-~InParty("CKLysre")
-See("CKLysre")
-!StateCheck("CKLysre",CD_STATE_NOTVALID)
+~InParty("Viconia")
+See("Viconia")
+!StateCheck("Viconia",CD_STATE_NOTVALID)
 !StateCheck("Viconia",CD_STATE_NOTVALID)
 Global("CKLysreViconiaToB1","GLOBAL",0)~ THEN BVICON25 CKLysreViconiaToB1
 @141

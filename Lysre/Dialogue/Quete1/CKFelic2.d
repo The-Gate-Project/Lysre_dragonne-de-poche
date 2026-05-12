@@ -50,7 +50,7 @@ END
 
 IF ~Global("CKquete1","GLOBAL",5)~ THEN BEGIN CKQ3
   SAY ~Parfait, donnez moi ça. Je vais m'occuper de convoquer quelques serviteurs. Pour la suite... J'ai repris contact avec quelques amies. L'une d'elle m'a parlé d'une mercenaire intéressante qui loge à l'auberge de la couronne de cuivre. Elle attend son guide, la Mère des Dragons. Allez la convaincre de s'installer ici voulez vous.~
-    IF ~~ THEN REPLY ~Bien sur~ DO ~TakePartyitem("WAND10")SetGlobal("CKquete1","GLOBAL",6)AddexperienceParty(10000) ~ EXIT
+    IF ~~ THEN REPLY ~Bien sur~ DO ~TakePartyItem("WAND10") SetGlobal("CKquete1","GLOBAL",6) AddexperienceParty(10000) ~ EXIT
     IF ~~ THEN REPLY ~Pas pour le moment~ DO ~SetGlobal("CKquete1","GLOBAL",6)~EXIT
 END
 
@@ -69,7 +69,7 @@ END
 
 IF ~Global("CKquete1","GLOBAL",8)~ THEN BEGIN CKQ2
   SAY ~La Mère des dragons vous remercie de votre implication. Je vous avais promis un objet contre votre aide n'est ce pas. Prenez cet anneau, il ne manquera pas à son ancien propriétaire.~
-    IF ~~ THEN REPLY ~Bien sur~ DO ~SetGlobal("CKquete1","GLOBAL",9)AddexperienceParty(12000)  GiveItemCreate("RING07","Player1",1,1,1)
+    IF ~~ THEN REPLY ~Bien sur~ DO ~SetGlobal("CKquete1","GLOBAL",9)AddexperienceParty(12000) GiveItemCreate("RING07","Player1",1,1,1)
 ~ EXIT
 
 END
