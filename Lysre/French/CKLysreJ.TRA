@@ -1,0 +1,74 @@
+//.//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Interjections  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//NPC//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Lavok
+@0    = ~Mmm... Un necromencien... De la chair lentement faisandee par la tentative futile des hommes de fuir la mort... <CHARNAME> Laissez moi le manger...~
+
+//Firkrag
+@2    = ~Ce dragon va chercher a vous nuir <CHARNAME>, prenez les devants, tuez le.~
+
+//Dryade
+@4    = ~En tant normal, j'aurais du dire que liberer ces Dryades est une chose idiote, mais franchement, pour en avoir manger quelques unes... c'est trop sec. Les nymphes sont beaucoup plus interessantes... Elle sont... savoureuses.~
+
+//Umar
+@5    = ~Une chevaliere naine emprisonnee... Ca a une dimension presque comique... C'est une boite dans une boite.~
+@6    = ~Pourquoi aider ces paysans ? c'est au mieux un amuse gueule...~
+
+//Oeil aveugle
+@12   = ~Une seule Divinite merite la fidelite de tous, et c'est la Grande Tiamat. Massacrons les !~
+@13   = ~Mmmm, la delicieuse odeur des charniers et de la mort. Il y a beaucoup de choses savoureuse qui se deplacent par ici !~
+
+//Esclavagiste
+
+@18   = ~Un esclave bipede a plus de valeur qu'un bipede. On hesite a manger des esclaves soumis, alors que les autres...~
+
+//  Drizzt
+@23   = ~Ha... je m'offre le droit de douter de vos chances de vaincre ces gens. Quel dommage, on ne croise pas un tel festion tout les jours.~
+
+//Irenicus
+@26   = ~Ah, vermine insolante, aujourd'hui sonne le jour ou je dechiqueterai tes entrailles~
+
+
+//Epee d'argent
+@29   = ~Abandonner un tresor ?! Voila une pensee indigne d'un Dragon~
+
+//En enfer
+@30   = ~Mmmm, quel delicieux endroit...~ [O#TIAX40]
+@31   = ~J'aurai cependant apprecier que vous ne me trainiez pas ici.~ [PPTIAX10]
+@32   = ~Allons cherchez votre ame, <CHARNAME>, votre route ne s'achevera pas ici.~
+
+//Le bateau
+@33   = ~La parole d'un traitre ne vaut rien. Tuez cet avorton <CHARNAME>!~
+
+//La pretresse sagahin
+@34   = ~Oh, oui, amenez moi a votre roi, il doit etre une delicieuse creature!~
+@35   = ~Restez polie, être de la surface. Vous êtes prisonniere de notre roi.~
+@27   = ~Comme si vous pouviez m'enfermer miserables.~
+
+//Les diablotins
+@36   = ~Pourquoi perdre notre temps avec leur jeu? Tuez les et depouillez les tout simplement !~
+
+@37   = ~Quelle splendide civilisation... tous ces sacrifices...dommage qu'elle venere la mauvaise divinite.~
+@38   = ~Surveillez vos paroles, vermines, ou vous allez connaitre votre fin aujourd'hui~
+
+//Elfes noirs
+@40   = ~Meme avec un corps limite, je vais vous montrer l'etendue de ma puissance.~
+@41   = ~(Ricane) Voila qui est amusant. Je devrais apprendre ce sort...~
+@43   = ~Maudit Argente, vous m'avez souillee! JAMAIS je n'oublierai cette insulte !~
+@44   = ~Continuez sur ce ton vermisseau, et je vous arrache les entrailles !~
+@45   = ~Voila tu reconnais ta place. Rampe a mes pieds et supplie moi de t'epargner une mort douloureuse.~
+
+@49   = ~Ton souhait ser-~
+@50   = ~SILENCE ! Je suis maitresse de mon avenir. Oui, mes souhaits seront exauces, puisque je le desire.~
+
+//Avant combat final
+@51   = ~Lysre observe les hauteurs, salivant son acide et ricanant. Etonament, cette dragonne acariatre est toujours a vos cotes, elle semble savourer la bataille qui va suivre.~
+@52   = ~Lysre, je vais me débrouiller sans toi.~
+@53   = ~Lysre ? Tu es prete j'espere, je vais avoir besoin de tes competences.~
+@54   = ~C'est le moment de prendre ta vengeance sur Irenicus Lysre.~
+
+@55   = ~*Lysre vous toise avec dedain*~
+@56   = ~Inutile de palabrer, allons apprendre a Irenicus qu'il a mal choisi ses ennemis! Allons le tuer !~

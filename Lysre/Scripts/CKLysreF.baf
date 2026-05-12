@@ -1,0 +1,57 @@
+// A script to "fix" Branwen's name and soundset, if it suddenly goes wrong. This is what happens when you select Branwen and press K(the script block about pressing K is in Branwen/Scripts/O#BranS.baf).
+// This is going to be boring, but you got to take all your soundset lines from your Setup-MyMod.tp2 and copy them here like I just did.
+
+// There is another way, if you want it. It's called traification. Download Coran NPC from http://www.pocketplane.net/coran and check his O#CoranF.baf and Setup-Coran.tra. You'll have to add LANGUAGE lines to your Setup-MyMod.tp2.
+// TRA tutorials are available in Weidu's README, as well.
+
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("CKLysre")
+SetName(@1)
+SetPlayerSound(Myself,@2,INITIAL_MEETING)
+SetPlayerSound(Myself,@3,MORALE)
+SetPlayerSound(Myself,@4,HAPPY)
+SetPlayerSound(Myself,@5,UNHAPPY_ANNOYED)
+SetPlayerSound(Myself,@6,UNHAPPY_SERIOUS)
+SetPlayerSound(Myself,@7,UNHAPPY_BREAKING_POINT)
+SetPlayerSound(Myself,@8,LEADER)
+SetPlayerSound(Myself,@9,TIRED)
+SetPlayerSound(Myself,@10,BORED)
+SetPlayerSound(Myself,@11,BATTLE_CRY1)
+SetPlayerSound(Myself,@12,BATTLE_CRY2)
+SetPlayerSound(Myself,@13,BATTLE_CRY3)
+SetPlayerSound(Myself,@14,BATTLE_CRY4)
+SetPlayerSound(Myself,@15,BATTLE_CRY5)
+SetPlayerSound(Myself,@16,DAMAGE)
+SetPlayerSound(Myself,@17,DYING)  
+SetPlayerSound(Myself,@18,HURT)
+SetPlayerSound(Myself,@19,AREA_FOREST)
+SetPlayerSound(Myself,@20,AREA_CITY)
+SetPlayerSound(Myself,@21,AREA_DUNGEON)
+SetPlayerSound(Myself,@22,AREA_DAY)
+SetPlayerSound(Myself,@23,AREA_NIGHT)
+SetPlayerSound(Myself,@24,SELECT_COMMON1)
+SetPlayerSound(Myself,@25,SELECT_COMMON2)
+SetPlayerSound(Myself,@26,SELECT_COMMON3)
+SetPlayerSound(Myself,@27,SELECT_COMMON4)
+SetPlayerSound(Myself,@28,SELECT_COMMON5)
+SetPlayerSound(Myself,@29,SELECT_COMMON6)
+SetPlayerSound(Myself,@30,SELECT_ACTION1)
+SetPlayerSound(Myself,@31,SELECT_ACTION2)
+SetPlayerSound(Myself,@32,SELECT_ACTION3)
+SetPlayerSound(Myself,@33,SELECT_ACTION4)
+SetPlayerSound(Myself,@34,SELECT_ACTION5)
+SetPlayerSound(Myself,@35,SELECT_ACTION6)
+SetPlayerSound(Myself,@36,SELECT_ACTION7)
+SetPlayerSound(Myself,@37,SELECT_RARE1)
+SetPlayerSound(Myself,@38,SELECT_RARE2)
+SetPlayerSound(Myself,@39,CRITICAL_HIT)
+SetPlayerSound(Myself,@40,CRITICAL_MISS)
+SetPlayerSound(Myself,@41,TARGET_IMMUNE)
+SetPlayerSound(Myself,@42,INVENTORY_FULL)
+SetPlayerSound(Myself,@43,SPELL_DISRUPTED)
+SetPlayerSound(Myself,@44,EXISTANCE5)
+EndCutSceneMode()
+END

@@ -1,0 +1,322 @@
+BEGIN BCKLysre
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Banters avec <CHARNAME> ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//N°1
+IF ~Global("CKLysreThankTalk","GLOBAL",1)~ CKLysreBanter
+SAY @1000
+++ @1001 DO ~SetGlobal("CKLysreThankTalk","GLOBAL",2)~ + QuestionSang
+++ @1003 DO ~SetGlobal("CKLysreThankTalk","GLOBAL",2)~ + RefusSang
+++ @1004 DO ~SetGlobal("CKLysreThankTalk","GLOBAL",2)~ + OuiSang
+END
+
+IF ~~ QuestionSang
+SAY @1002
+++ @1003 + RefusSang
+++ @1004 + OuiSang
+END
+
+IF ~~ RefusSang
+SAY @1025
+IF ~~ EXIT
+END
+
+IF ~~ OuiSang
+SAY @1005
+++ @1006 + RefusSang
+++ @1007 + OuiSang2
+END
+
+IF ~~ OuiSang2
+SAY @1008
+++ @1009 + RefusSang
+++ @1010 + OuiSang3
+END
+
+IF ~~ OuiSang3
+SAY @1011
+++ @1012 + OuiSang4
+++ @1013 + OuiSang4
+++ @1014 + OuiSang4
+END
+
+IF ~~ OuiSang4
+SAY @1011
+++ @1015 + OuiSang5
+++ @1016 + OuiSang6
+++ @1017 + OuiSang7
+++ @1018 + OuiSang7
+END
+
+IF ~~ OuiSang5
+SAY @1019
+IF ~~ EXIT
+END
+
+IF ~~ OuiSang6
+SAY @1020
+IF ~~ EXIT
+END
+
+IF ~~ OuiSang7
+SAY @1021
+IF ~~ EXIT
+END
+
+//N°2
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Banters avec les NPCS   // @2xxx///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Keldorn/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Aucun dialogue prevu, personnages incompatibles
+
+//Imoen  @21xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//N°1
+CHAIN
+IF ~InParty("Imoen2")
+See("Imoen2")
+!StateCheck("Imoen2",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreImoenB","GLOBAL",0)~ THEN BCKLysre CKLysreImoen1
+            @2101
+DO ~SetGlobal("CKLysreImoenB","GLOBAL",1)~
+== IMOEN2J  @2102
+== BCKLysre @2103
+== IMOEN2J  @2104
+== BCKLysre @2105
+== IMOEN2J  @2106
+== BCKLysre @2107
+== IMOEN2J  @2108
+== BCKLysre @2109
+EXIT
+
+//N°2
+CHAIN
+IF ~InParty("Imoen2")
+See("Imoen2")
+!StateCheck("Imoen2",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreImoenB","GLOBAL",1)~ THEN BCKLysre CKLysreImoen2
+            @2110
+DO ~SetGlobal("CKLysreImoenB","GLOBAL",2)~
+== IMOEN2J  @2111
+== BCKLysre @2112
+== IMOEN2J  @2113
+== BCKLysre @2114
+== IMOEN2J  @2115
+== BCKLysre @2116
+== IMOEN2J  @2117
+== BCKLysre @2118
+== IMOEN2J  @2119
+EXIT
+
+//Viconia  @22xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("Viconia")
+See("Viconia")
+!StateCheck("Viconia",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreViconia1","GLOBAL",0)~ THEN BCKLysre CKLysreViconia1
+@2200
+DO ~SetGlobal("CKLysreViconia1","GLOBAL",1)~
+== BCKLysre @2201
+== BVICONI  @2202
+== BCKLysre @2203
+== BVICONI  @2204
+== BCKLysre @2205
+EXIT
+
+//Aerie  @23xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("Aerie")
+See("Aerie")
+!StateCheck("Aerie",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreAerie1","GLOBAL",0)~ THEN BCKLysre CKLysreAerie1
+@2300
+DO ~SetGlobal("CKLysreAerie1","GLOBAL",1)~
+== BAERIE   @2301
+== BCKLysre @2302
+== BAERIE   @2303
+== BCKLysre @2304
+EXIT
+
+//Minsc  @24xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("Minsc")
+See("Minsc")
+!StateCheck("Minsc",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreMinsc1","GLOBAL",0)~ THEN BCKLysre CKLysreMinsc1
+@2400
+DO ~SetGlobal("CKLysreMinsc1","GLOBAL",1)~
+== BMINSC   @2401
+== BCKLysre @2402
+== BMINSC   @2403
+== BCKLysre @2404
+== BCKLysre @2405
+== BMINSC   @2406
+== BCKLysre @2407
+EXIT
+
+//Edwin  @25xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("Edwin")
+See("Edwin")
+!StateCheck("Edwin",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreEdwin1","GLOBAL",0)~ THEN BCKLysre CKLysreEdwin1
+@2500
+DO ~SetGlobal("CKLysreEdwin1","GLOBAL",1)~
+== BEDWIN @2501
+== BCKLysre @2502
+== BEDWIN @2503
+== BCKLysre @2504
+== BEDWIN @2505
+EXIT
+
+//Haerdalis  @26xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN IF WEIGHT #18
+~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("HaerDalis",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreHaerDalis1","GLOBAL",0)~ THEN BCKLysre CKLysreHaerDalis1
+@2600
+DO ~SetGlobal("CKLysreHaerDalis1","GLOBAL",1)~
+== BHAERDA  @2601
+== BCKLysre @2602
+== BHAERDA  @2603
+EXIT
+
+//Jan   @2700////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN IF WEIGHT #3
+~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("Jan",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreJan1","GLOBAL",0)~ THEN BCKLysre CKLysreJan1
+@2700
+DO ~SetGlobal("CKLysreJan1","GLOBAL",1)~
+== BJAN @2701
+== BCKLysre @2702
+EXIT
+
+//Jaheira @2800////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("Jaheira",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreJaheira1","GLOBAL",0)~ THEN BJAHEIR CKLysreJaheira1
+@2800
+DO ~SetGlobal("CKLysreJaheira1","GLOBAL",1)~
+== BCKLysre @2801
+== BJAHEIR  @2802
+== BCKLysre @2803
+== BJAHEIR  @2804
+EXIT
+
+//Nalia     @2900/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN IF WEIGHT #5
+~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("Nalia",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreNalia1","GLOBAL",0)~ THEN BNALIA CKLysreNalia1
+@2900
+DO ~SetGlobal("CKLysreNalia1","GLOBAL",1)~
+== BCKLysre @2901
+== BNALIA   @2902
+== BCKLysre @2903
+== BNALIA   @2904
+== BCKLysre @2905
+EXIT
+
+//Valygar   @3000/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN IF WEIGHT #5
+~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("Valygar",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreValygar3","GLOBAL",0)~ THEN BVALYGA CKLysreValygar3
+@3000
+DO ~SetGlobal("CKLysreValygar3","GLOBAL",1)~
+== BCKLysre @3001
+== BVALYGA @3002
+== BCKLysre @3003
+== BVALYGA @3004
+== BCKLysre @3005
+EXIT
+
+//Anomen   @3100//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("Anomen")
+See("Anomen")
+See("Lysre")
+!StateCheck("Anomen",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreAnomen1","GLOBAL",0)~ THEN BCKLysre CKLysreAnomen1
+@3101
+DO ~SetGlobal("CKLysreAnomen1","GLOBAL",1)~
+== BANOMEN   @3102
+== BCKLysre  @3103
+== BANOMEN   @3104
+== BCKLysre  @3105
+== BANOMEN   @3106
+== BCKLysre  @3107
+END
+
+//Korgan     @3200////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN
+IF ~InParty("Korgan")
+See("Korgan")
+!StateCheck("Korgan",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreKorgan1","GLOBAL",0)~ THEN BCKLysre CKLysreKorgan1
+@3200
+DO ~SetGlobal("CKLysreKorgan1","GLOBAL",1)~
+== BKORGAN  @3201
+== BCKLysre @3202
+== BKORGAN  @3203
+== BCKLysre @3204
+== BKORGAN  @3205
+== BCKLysre @3206
+EXIT
+
+//Cernd     @3300///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN IF WEIGHT #8
+~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("Cernd",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreCernd1","GLOBAL",0)~ THEN BCERND CKLysreCernd1
+@3300
+DO ~SetGlobal("CKLysreCernd1","GLOBAL",1)~
+== BCKLysre @3301
+== BCERND   @3302
+== BCKLysre @3303
+== BCERND   @3304
+EXIT
+
+//Mazzy    @34xx////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CHAIN IF WEIGHT #5
+~InParty("CKLysre")
+See("CKLysre")
+!StateCheck("Mazzy",CD_STATE_NOTVALID)
+!StateCheck("CKLysre",CD_STATE_NOTVALID)
+Global("CKLysreMazzy1","GLOBAL",0)~ THEN BMAZZY CKLysreMazzy1
+@3400
+DO ~SetGlobal("CKLysreMazzy1","GLOBAL",1)~
+== BCKLysre @3401
+== BMAZZY   @3402
+== BCKLysre @3403
+EXIT

@@ -1,0 +1,33 @@
+- Ajouter ecailles pour draconis
+- Voir quetes de Dorn (2 dragons?)
+
+
+NOIR	OMBRE IRENICUS
+ROUGE	FIRKARG TDG
+BLANC	TDG
+VERT	DRACONIS
+BLEU	PAPA
+
+ARGENT
+DEMONS
+
+		Emplacement	Source		Bonus
+ROUGE :		Armure		Firkarg 	(+2CA)
+				TDG		(+4CA)(Souffle?)
+BLEU :		Cape		Papa		(%Foudre)
+
+VERT :		Ceinture	Draconis	(Antipoison)(Brume de poison)
+
+BLANC : 	Bouclier	TDG		(%Froid)(Cone de froid)
+
+NOIR :		Bottes		Ombre		(Pas de l'ombre)
+		Dague		Irenicus        (Griffes ameliorées)
+
+
+Sigle Tiamat :	Ceinture	Aragon		(Sorts de pretres)	
+
+COEUR :		Gant		Demon enfer 	(+1CON)
+				Coeur de Bodhi  (+1DEX/INT ; -1CON)		
+
+		Fronde		
+

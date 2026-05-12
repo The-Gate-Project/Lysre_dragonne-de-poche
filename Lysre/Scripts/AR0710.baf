@@ -1,0 +1,57 @@
+// Generation du NPC  ///////////////////////////////////
+IF                                                     //
+Global("CKLysreSpawn","GLOBAL",0)                      //
+THEN                                                   //
+RESPONSE #100                                          //
+SetGlobal("CKLysreSpawn","GLOBAL",1)                   //
+CreateVisualEffect("SPPORTAL",[481.182])               //
+Wait(2)                                                //
+CreateCreature("CKLysre",[481.182],13)                 //
+END                                                    //
+/////////////////////////////////////////////////////////
+
+// Maj XP //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+IF
+InParty("CKLysre")
+Global("CKLysreXP","GLOBAL",0)
+XPLT(Player1,280001)
+THEN
+RESPONSE #100
+SetGlobal("CKLysreXP","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty("CKLysre")
+Global("CKLysreXP","GLOBAL",0)
+XPGT(Player1,280000)
+XPLT(Player1,600001)
+THEN
+RESPONSE #100
+SetGlobal("CKLysreXP","GLOBAL",1)
+AddXPObject("CKLysre",239000)
+Continue()
+END
+
+IF
+InParty("CKLysre")
+Global("CKLysreXP","GLOBAL",0)
+XPGT(Player1,600000)
+XPLT(Player1,1000001)
+THEN
+RESPONSE #100
+SetGlobal("CKLysreXP","GLOBAL",1)
+AddXPObject("CKLysre",639000)
+Continue()
+END
+
+IF
+InParty("CKLysre")
+Global("CKLysreXP","GLOBAL",0)
+XPGT(Player1,1000000)
+THEN
+RESPONSE #100
+SetGlobal("CKLysreXP","GLOBAL",1)
+AddXPObject("CKLysre",1039000)
+Continue()
+END

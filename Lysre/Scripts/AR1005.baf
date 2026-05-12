@@ -1,0 +1,23 @@
+//MAP DE LA PRISON DU QUARTIER DU GOUVERNEMENT
+
+// Generation de la pretresse emprisonnée ///////////////
+IF                                                     //
+Global("CKPretressespawn","AR1005",0)                  //
+THEN                                                   //
+RESPONSE #100                                          //
+SetGlobal("CKPretressespawn","AR1005",1)               //
+Wait(2)                                                //
+CreateCreature("CKFelici",[499.765],13)                 //
+END                                                    //
+/////////////////////////////////////////////////////////
+
+// Generation du garde a clef  //////////////////////////
+IF                                                     //
+Global("CKGardespawn","AR1005",0)                      //
+THEN                                                   //
+RESPONSE #100                                          //
+SetGlobal("CKGardespawn","AR1005",1)                   //
+Wait(2)                                                //
+CreateCreature("CKBAMN",[630.350],13)                  //
+END                                                    //
+/////////////////////////////////////////////////////////

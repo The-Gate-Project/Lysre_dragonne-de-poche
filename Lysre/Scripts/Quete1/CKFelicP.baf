@@ -1,0 +1,16 @@
+IF
+Global("CKQuete1","Global",4)
+THEN
+RESPONSE #100
+ Hide()
+ Escapearea()
+ DestroySelf()
+END
+
+IF
+Global("CKQuete1","Global",8)
+AreaCheck("AR406")
+THEN
+  RESPONSE #100
+  Escapearea()
+END

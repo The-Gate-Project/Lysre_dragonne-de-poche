@@ -1,0 +1,12 @@
+//Couronne de cuivre
+
+// Generation de la paladine pour tiamat ////////////////
+IF                                                     //
+Global("CKPaladine","AR0406",0)
+Global("CKquete1","Global",7)                          //
+THEN                                                   //
+RESPONSE #100                                          //
+SetGlobal("CKPaladine","AR0406",1)                     //                                             //
+CreateCreature("CKvarsco",[1624.1750],13)              //
+END                                                    //
+/////////////////////////////////////////////////////////

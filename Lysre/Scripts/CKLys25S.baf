@@ -1,0 +1,8 @@
+// Hotkey fixer
+IF
+HotKey(K)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+StartCutScene("CKLysreF")
+END
