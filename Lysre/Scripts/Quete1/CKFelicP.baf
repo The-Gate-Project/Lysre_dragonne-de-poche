@@ -5,6 +5,8 @@ RESPONSE #100
  Hide()
  Escapearea()
  DestroySelf()
+ ReputationInc(-1)
+ AddexperienceParty(6000)
 END
 
 IF

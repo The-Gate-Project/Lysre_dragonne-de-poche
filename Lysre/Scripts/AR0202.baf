@@ -1,8 +1,8 @@
 //TEMPLE DE LOEIL AVEUGLE
 
-// Generation de la pretresse emprisonnée ///////////////
+// Generation de la pretresse liberee de prison /////////
 IF                                                     //
-Global("CKPretressespawn","AR0202",0)  
+Global("CKPretressespawn","AR0202",0)                  //
 Global("CKquete1","Global",4)                          //
 THEN                                                   //
 RESPONSE #100                                          //
@@ -14,11 +14,11 @@ END                                                    //
 
 // Generation des gardes kobolds ////////////////////////
 IF                                                     //
-Global("CKKoboldspawn","AR0202",0)
+Global("CKKoboldspawn","AR0202",0)                     //
 Global("CKquete1","Global",7)                          //
 THEN                                                   //
 RESPONSE #100                                          //
-SetGlobal("CKKoboldspawn","AR0202",1)               //
+SetGlobal("CKKoboldspawn","AR0202",1)                  //
 CreateCreature("CKKobold",[2411.2164],13)              //
 CreateCreature("CKKobold",[2500.2089],13)              //
 CreateCreature("CKKobold",[2754.1874],13)              //
@@ -33,17 +33,18 @@ END                                                    //
 
 // Generation de la Paladine et des acolytes ////////////
 IF                                                     //
-Global("CKpaladinespawn","AR0202",0)                   //
+Global("CKtemplespawn","AR0202",0)                   //
 Global("CKquete1","Global",8)                          //
 THEN                                                   //
 RESPONSE #100                                          //
-SetGlobal("CKpaladinespawn","AR0202",1)                //
-CreateCreature("CKFidelF",[2414.2164],13)              //
-CreateCreature("CKFidelF",[2414.2164],13)              //
-CreateCreature("CKFidelF",[2414.2164],13)              //
-CreateCreature("CKFidelH",[2414.2164],13)              //
-CreateCreature("CKFidelH",[2414.2164],13)              //
-CreateCreature("CKFidelH",[2414.2164],13)              //
+SetGlobal("CKtemplespawn","AR0202",1)                //
+CreateCreature("CKFidelF",[1245.1758],13)              //
+CreateCreature("CKFidelF",[1328.1421],13)              //
+CreateCreature("CKFidelF",[2063.1165],13)              //
+CreateCreature("CKFidelH",[1662.1212],13)              //
+CreateCreature("CKFidelH",[1588.1560],13)              //
+CreateCreature("CKFidelH",[1966.1422],13)              //
+CreateCreature("CKVarsco",[2413.1588],13)              //
 END                                                    //
 /////////////////////////////////////////////////////////
 

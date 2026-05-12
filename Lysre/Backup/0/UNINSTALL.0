@@ -1,4 +1,6 @@
 override/bgee.lua
+override/CKMORTIN.cre
+override/CKMORTIN.dlg
 override/CKFelicP.bcs
 override/CKFelici.cre
 override/CKFELICI.dlg
@@ -162,5 +164,6 @@ override/CKBull.itm
 override/Ecaille3.itm
 override/Griffe2.itm
 override/CKclef.itm
+override/CKioniqu.itm
 override/CKsoufle.spl
 override/CKsoin.spl

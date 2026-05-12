@@ -1,0 +1,24 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Dialogue des Kobolds ////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN CKKobolds
+
+IF ~True()~ THEN BEGIN CKKob1
+  SAY ~*Ce Kobold vous observe avec curiosite* Grrrr Graaaa Rrrrou~
+  IF ~~ THEN REPLY ~Que fais-tu ici?~ GOTO CKKob2
+  IF ~~ THEN REPLY ~Qui es tu ?~ GOTO CKKob3
+  IF ~~ THEN REPLY ~*S'eloigner*~ EXIT
+END
+
+IF ~~ THEN BEGIN CKKob2
+  SAY ~*Le kobold agite son arc et frappe son poing contre sa poitrine*~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN CKKob3
+  SAY ~Rrr rrr Kay kay ! Rrrr !.~
+  IF ~~ THEN EXIT
+END
+
+
+

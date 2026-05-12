@@ -3,40 +3,40 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //N°1 : 1xxx
 @1000    = ~*Chose rare, Lysre s'approche de vous, volant tranquillement en cercle autour de votre crane*
-Dites moi <CHARNAME>? Si j'en crois la vision que m'a accordee la Grande Tiamat, vous etes un enfant de Bhaal. Vous me laisseriez goutter votre sang... votre essence? Ce n'est pas tout les jours qu'on a la possibilite de goutter une essence divine. ~
+Dites moi <CHARNAME>? Si j'en crois la vision que m'a accordee la Grande Tiamat le jour de notre rencontre, vous etes un enfant de Bhaal. Par pure curiosite, vous me laisseriez goutter votre sang... votre essence? Ce n'est pas tout les jours qu'on a la possibilite de goutter une essence divine presque a la source. ~
 
 @1001    = ~Tu veux boire mon sang ?~
-@1002    = ~Juste quelques gouttes, vous ne sentirez presque rien. Je vous l'assure.~
+@1002    = ~Oh, n'ayez pas cet air de jeune bipede a ma vue. Ce n'est presque rien tres cher, juste quelques gouttes, vous ne sentirez meme pas mes crocs. Je vous l'assure, je sais me montrer aussi douce que la brume.~
 
 @1003    = ~La reponse est non~
 
 @1004    = ~Si ca t'amuse Lysre.~
 
-@1005    = ~*Alors que vous tendez la main, Lysre se pose delicatement sur votre bras, avancant son museau jusqu'a votre main.* ~
+@1005    = ~*Alors que vous tendez la main, Lysre se pose delicatement sur votre bras. La pression de ses griffes est ferme contre vos chair, sans pour autant les meurtirs. Lentement, la dragonne avancant son museau jusqu'a votre main.* ~
 @1006    = ~*Reculer la main*~
 @1007    = ~*Laisser faire*~
 
-@1008    = ~*Avec une lenteur exageree, Lystre plante ses crocs dans votre main. Etrangement vous ne ressentez aucune douleur. Juste une desagreable sensation de froid dans la mains*~
+@1008    = ~*Avec une lenteur manifestement exageree, Lystre entrouve sa gueule, laissant paraitre des crocs luisants. Elle fait mine de renifler lentement la peau, avant de planter ses crocs dans votre main. Etrangement vous ne ressentez aucune douleur. Juste une desagreable sensation de froid se rependant lentement dans votre chair.*~
 @1009    = ~*Ca suffit Lysre!*~
 @1010    = ~*Laisser faire*~
 
-@1011    = ~*D'un coup, vous sentez une violente douleur vous prendre au coeur, votre vision se noircie brutalement et vos jambes commencent a trembler.
-Puis tout cesse, mis a part la trace des crocs de Lysre sur votre peau, rien que cette sensation glaciale.* ~
+@1011    = ~*Tout a coup, vous sentez une violente douleur vous prendre au coeur, votre vision se noircie brutalement et vos jambes commencent a trembler.
+Puis tout aussi rapidement, la douleur cesse, mis a part la legere trace des crocs de Lysre sur votre peau, rien ne temoigne de cette sensation glaciale.* ~
 @1012    = ~Qu'est ce que c'etait !*~
 @1013    = ~Lysre !~
 @1014    = ~*S'eloigner*~
 
-@1015    = ~*Lysre sourit* N'ayez pas peur <CHARNAME>, je n'ai pris qu'un peu de sang et une etincelle de votre ame. Rien qui peut vous nuire~
+@1015    = ~*Lysre sourit, elle a repris ses distances et se tortille* N'ayez pas peur <CHARNAME>, je n'ai pris qu'un peu de sang et une etincelle de votre ame. Rien qui ne peut vous nuire comme le veut le contrat. C'etait delicieux, une saveur de charogne et de mort, de carnages et de sang. C'etait... (ricane) Divin.~
 @1016    = ~Ne recommence jamais !~
 @1017    = ~Mais pourquoi !~
 @1018    = ~L'ignorer et partir~
 
-@1019    = ~*Lysre sourit* Cela m'est impossible, je ne peux vous nuir <CHARNAME>~
-@1020    = ~Meme si celle de Bhaal est infame. Pourquoi me priver d'un peu d'essence de Divinite.~
-@1021    = ~Merci encore <CHARNAME>!~
+@1019    = ~*Lysre sourit* Cela m'est impossible de vous prelever une etincelle de plus, je ne peux vous nuir <CHARNAME>, c'est dans notre contrat. Et ma parole est absolue (ricane)~
+@1020    = ~Meme si celle de Bhaal est infame selon l'avis de beaucoup. Elle a le gout de la mort, et de la putrefaction... Pourquoi me priver d'un peu d'essence de Divinite dotee d'une telle saveur? C'est un plat de choix.~
+@1021    = ~Merci encore <CHARNAME>! Votre generosite vous honore (ricane)~
 
 //interuption
-@1022    = ~Je n'ai pas encore atteint l'essence <CHARNAME> Laissez moi poursuivre je vous prie.~
+@1022    = ~Je n'ai pas encore atteint l'essence <CHARNAME>. Laissez moi poursuivre je vous prie.~
 @1023    = ~D'accord, mais fait vite!~
 @1024    = ~Non, ca suffit !~
 

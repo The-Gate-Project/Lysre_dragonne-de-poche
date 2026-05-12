@@ -1,0 +1,24 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Dialogue des fideles de Tiamat ////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+BEGIN CKKoboldalpha
+
+IF ~True()~ THEN BEGIN CKKoba1
+  SAY ~*Ce kobold vous observe calmement*~
+  IF ~~ THEN REPLY ~Que fais-tu ici?~ GOTO CKKoba2
+  IF ~~ THEN REPLY ~Qui es tu ?~ GOTO CKKoba3
+  IF ~~ THEN REPLY ~*S'eloigner*~ EXIT
+END
+
+IF ~~ THEN BEGIN CKKoba2
+  SAY ~*Le kobold hoche lentement la tete en direction de la fosse*~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN CKFid3
+  SAY ~*Le kobold secoue tristement la tete*~
+  IF ~~ THEN EXIT
+END
+
+
+

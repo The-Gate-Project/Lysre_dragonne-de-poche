@@ -48,7 +48,14 @@ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
 UNLESS ~CD_STATE_NOTVALID~
 
 //Ajout des NPC de la quete 1////////////////////////////////////////////////////////////
-COMPILE ~Lysre/Scripts/Quete1/CKFelicP.baf~ //Ajout du script de sortie map               //
+COPY    ~Lysre/Characters/Intro/CKMORTIN.cre~ ~override/CKMORTIN.cre~ //Ajout du perso //
+  SAY NAME1 ~Mortin~                                                                   //
+  SAY NAME2 ~Mortin~                                                                   //
+COMPILE ~Lysre/Dialogue/Intro/CKMORTIN.d~ //Ajout dialogue                             //
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//Ajout des NPC de la quete 1////////////////////////////////////////////////////////////
+COMPILE ~Lysre/Scripts/Quete1/CKFelicP.baf~ //Ajout du script de sortie map            //
 //Pretresse emprisonnée                                                                //
 COPY    ~Lysre/Characters/Quete1/CKFelici.cre~ ~override/CKFelici.cre~ //Ajout du perso//
   SAY NAME1 ~Felicia~                                                                  //
@@ -363,6 +370,16 @@ COPY ~Lysre/items/CKclef.itm~ ~override~
   SAY NAME1 @2023
   SAY NAME2 @2023
   SAY DESC  @2024
+/////////////////////////////////////////////////////////////////////
+COPY ~Lysre/items/CKioniqu.itm~ ~override~
+  SAY NAME1 ~Pierre de chair~
+  SAY NAME2 ~Pierre de chair~
+  SAY DESC  ~Cette pierre ionique degage l'odeur douceatre du sang pourri. Constiuee d'un melange de chair humaine et de sang de dragon d'argent, il s'aggit sans nul doute d'un objet profondement malefique. Seuls les individus voues au mal sont capables de profiter du simple enchantement de protection qu'elle dispense.
+
+PARAMETRES :
+
+Bonus de Classe d'Armure : +1
+Poids : 2~
 
 //Ajout de sorts////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 COPY ~Lysre/Sorts/CKsoufle.spl~ ~override~
