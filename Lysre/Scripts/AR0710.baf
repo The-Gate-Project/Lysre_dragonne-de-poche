@@ -1,29 +1,29 @@
-// Generation du NPC  ///////////////////////////////////
-IF                                                     //
-Global("CKLysreSpawn","GLOBAL",0)                      //
-THEN                                                   //
-RESPONSE #100                                          //
-SetGlobal("CKLysreSpawn","GLOBAL",1)                   //
-//CreateVisualEffect("SPPORTAL",[481.182])               //
-//Wait(2)                                                //
-CreateCreature("CKLysre",[481.182],13)                 //
-CreateCreature("CKMORTIN",[482.181],13)                //
-END                                                    //
-/////////////////////////////////////////////////////////
-
-// Generation de la vic  ///////////////////////////////////
-IF                                                     //
-Global("CKLysreSpawn","GLOBAL",0)                      //
-THEN                                                   //
-RESPONSE #100                                          //
-SetGlobal("CKLysreSpawn","GLOBAL",1)                   //
-CreateVisualEffect("SPPORTAL",[481.182])               //
-Wait(2)                                                //
-CreateCreature("CKLysre",[481.182],13)                 //
-END                                                    //
-/////////////////////////////////////////////////////////
-
-// Maj XP //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Generation du NPC  ////////////////////////////////
+IF
+	Global("CKLysreSpawn","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CKLysreSpawn","GLOBAL",1)
+		CreateCreature("CKMORTIN",[482.181],13)
+		CreateVisualEffect("SPPORTAL",[481.182])
+		Wait(2)
+		CreateCreature("CKLysre",[481.182],13)
+END
+//////////////////////////////////////////////////////
+/*
+// Generation de la vic  /////////////////////////////
+IF
+	Global("CKLysreSpawn","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CKLysreSpawn","GLOBAL",1)
+		CreateVisualEffect("SPPORTAL",[481.182])
+		Wait(2)
+		CreateCreature("CKLysre",[481.182],13)
+END
+//////////////////////////////////////////////////////
+*/
+// Maj XP ////////////////////////////////////////////
 IF
 InParty("CKLysre")
 Global("CKLysreXP","GLOBAL",0)

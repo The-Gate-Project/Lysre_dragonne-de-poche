@@ -1,8 +1,10 @@
 // Hotkey fixer
 IF
-HotKey(K)
+	HotKey(K)
+	InParty("CKLysre")
+	!ActuallyInCombat()
 THEN
-RESPONSE #100
-StartCutSceneMode()
-StartCutScene("CKLysreF")
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("CKLysreF")
 END

@@ -1,50 +1,53 @@
 //TEMPLE DE LOEIL AVEUGLE
 
-// Generation de la pretresse liberee de prison /////////
-IF                                                     //
-Global("CKPretressespawn","AR0202",0)                  //
-Global("CKquete1","Global",4)                          //
-THEN                                                   //
-RESPONSE #100                                          //
-SetGlobal("CKPretressespawn","AR0202",1)               //
-CreateCreature("CKFelic2",[2220.1576],13)              //
-END                                                    //
-/////////////////////////////////////////////////////////
+// Generation de la pretresse liberee de prison /////
+IF
+	Global("CKPretressespawn","AR0202",0)
+	Global("CKquete1","Global",4)
+THEN
+	RESPONSE #100
+		SetGlobal("CKPretressespawn","AR0202",1)
+		CreateCreature("CKFelic2",[2220.1576],13)
+		Continue()
+END
+/////////////////////////////////////////////////////
 
 
-// Generation des gardes kobolds ////////////////////////
-IF                                                     //
-Global("CKKoboldspawn","AR0202",0)                     //
-Global("CKquete1","Global",7)                          //
-THEN                                                   //
-RESPONSE #100                                          //
-SetGlobal("CKKoboldspawn","AR0202",1)                  //
-CreateCreature("CKKobold",[2411.2164],13)              //
-CreateCreature("CKKobold",[2500.2089],13)              //
-CreateCreature("CKKobold",[2754.1874],13)              //
-CreateCreature("CKKobold",[2736.1917],13)              //
-CreateCreature("CKKobold",[3049.2010],13)              //
-CreateCreature("CKKobold",[2408.1961],13)              //
-CreateCreature("CKKobold",[2261.2071],13)              //
-CreateCreature("CKKobol2",[1450.2135],13)              //
-CreateCreature("CKKobold",[1504.2028],13)              //
-END                                                    //
-/////////////////////////////////////////////////////////
+// Generation des gardes kobolds ////////////////////
+IF
+	Global("CKKoboldspawn","AR0202",0)
+	Global("CKquete1","Global",7)
+THEN
+	RESPONSE #100
+		SetGlobal("CKKoboldspawn","AR0202",1)
+		CreateCreature("CKKobold",[2411.2164],13)
+		CreateCreature("CKKobold",[2500.2089],13)
+		CreateCreature("CKKobold",[2754.1874],13)
+		CreateCreature("CKKobold",[2736.1917],13)
+		CreateCreature("CKKobold",[3049.2010],13)
+		CreateCreature("CKKobold",[2408.1961],13)
+		CreateCreature("CKKobold",[2261.2071],13)
+		CreateCreature("CKKobol2",[1450.2135],13)
+		CreateCreature("CKKobold",[1504.2028],13)
+		Continue()
+END
+/////////////////////////////////////////////////////
 
-// Generation de la Paladine et des acolytes ////////////
-IF                                                     //
-Global("CKtemplespawn","AR0202",0)                   //
-Global("CKquete1","Global",8)                          //
-THEN                                                   //
-RESPONSE #100                                          //
-SetGlobal("CKtemplespawn","AR0202",1)                //
-CreateCreature("CKFidelF",[1245.1758],13)              //
-CreateCreature("CKFidelF",[1328.1421],13)              //
-CreateCreature("CKFidelF",[2063.1165],13)              //
-CreateCreature("CKFidelH",[1662.1212],13)              //
-CreateCreature("CKFidelH",[1588.1560],13)              //
-CreateCreature("CKFidelH",[1966.1422],13)              //
-CreateCreature("CKVarsco",[2413.1588],13)              //
-END                                                    //
-/////////////////////////////////////////////////////////
+// Generation de la Paladine et des acolytes ////////
+IF
+	Global("CKtemplespawn","AR0202",0)
+	Global("CKquete1","Global",8)
+THEN
+	RESPONSE #100
+		SetGlobal("CKtemplespawn","AR0202",1)
+		CreateCreature("CKFidelF",[1245.1758],13)
+		CreateCreature("CKFidelF",[1328.1421],13)
+		CreateCreature("CKFidelF",[2063.1165],13)
+		CreateCreature("CKFidelH",[1662.1212],13)
+		CreateCreature("CKFidelH",[1588.1560],13)
+		CreateCreature("CKFidelH",[1966.1422],13)
+		CreateCreature("CKVarsco",[2413.1588],13)
+		Continue()
+END
+/////////////////////////////////////////////////////
 

@@ -1,18 +1,18 @@
 IF
-Global("CKQuete1","Global",4)
+	Global("CKQuete1","Global",4)
 THEN
-RESPONSE #100
- Hide()
- Escapearea()
- DestroySelf()
- ReputationInc(-1)
- AddexperienceParty(6000)
+	RESPONSE #100
+		Hide()
+		ReputationInc(-1)
+		AddexperienceParty(6000)
+		EscapeArea()
+		DestroySelf()
 END
 
 IF
-Global("CKQuete1","Global",8)
-AreaCheck("AR406")
+	Global("CKQuete1","Global",8)
+	AreaCheck("AR0406")
 THEN
-  RESPONSE #100
-  Escapearea()
+	RESPONSE #100
+		EscapeArea()
 END

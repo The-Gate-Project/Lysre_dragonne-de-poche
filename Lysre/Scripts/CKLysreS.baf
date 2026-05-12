@@ -3,54 +3,59 @@
 //Ecaille dragon argent : OHDSCALE.ITM
 //Coeur de Bodhi : MISCBP.ITM
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Lancer le premier dialogue avec le joueur///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//Lancer le premier dialogue avec le joueur/////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 IF
-Global("CKLysreintro","LOCALS",0)        
-Global("CKLysreSpawn","GLOBAL",1)
+	Global("CKLysreintro","LOCALS",0)
+	Global("CKLysreSpawn","GLOBAL",1)
 THEN
-RESPONSE #100
-StartDialogueNoSet([PC])
+	RESPONSE #100
+		StartDialogueNoSet([PC])
 END
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Tuer le NPC et relanger le dialogue avec le joueur///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//Tuer le NPC et relanger le dialogue avec le joueur////////////////////////
+////////////////////////////////////////////////////////////////////////////
 IF
-Global("CKLysreintro","LOCALS",1)
-Global("CKLysreSpawn","GLOBAL",1)
+	Global("CKLysreintro","LOCALS",1)
+	Global("CKLysreSpawn","GLOBAL",1)
 THEN
-                RESPONSE #100
+	RESPONSE #100
+		ClearAllActions()
 		StartCutSceneMode()
 		CutSceneId(Player1)
-                ClearAllActions()
-                Spell("CKMORTIN",WIZARD_MELF_ACID_ARROW)
-                Kill("CKMORTIN")
+//		Spell("CKMORTIN",WIZARD_MELF_ACID_ARROW)
+		ActionOverride("CKLysre",ApplySpell("CKMORTIN",WIZARD_MELF_ACID_ARROW))
+		Wait(1)
+		Kill("CKMORTIN")
+		Wait(1)
 		EndCutSceneMode()
-                StartDialogueNoSet([PC])
+		StartDialogueNoSet([PC])
 END
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Lancer la quete propre au NPC  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//Lancer la quete propre au NPC  ///////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 IF
- Dead("UnseeingEye")  // L'oeil aveugle a été tué, c'est le CRE de l'amulette
- Dead("GAAL")  // Le pretre a été tué.
- PartyRested()  // Le groupe s'est reposé, ce qui veut dire que la zone a été nettoyée, et que le NPC a pu avoir son message Divin.
- Global("CKquete1","GLOBAL",0)  // Variable qui lance la quete
+	Dead("UnseeingEye")  // L'oeil aveugle a été tué, c'est le CRE de l'amulette
+	Dead("GAAL")  // Le pretre a été tué.
+	PartyRested()  // Le groupe s'est reposé, ce qui veut dire que la zone a été nettoyée, et que le NPC a pu avoir son message Divin.
+	Global("CKquete1","GLOBAL",0)  // Variable qui lance la quete
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
 THEN
- RESPONSE #100
-    SetGlobal("CKquete1","GLOBAL",1) //La quete est lancée
-    StartDialogueNoSet([PC])
+	RESPONSE #100
+		SetGlobal("CKquete1","GLOBAL",1) //La quete est lancée
+		StartDialogueNoSet([PC])
 END
 
 IF
- PartyRested()  // Le groupe s'est reposé, ce qui veut dire que la zone a été nettoyée, et que le NPC a pu avoir son message Divin.
- Global("CKquete1","GLOBAL",6)  // Variable qui lance la quete
+	PartyRested()  // Le groupe s'est reposé, ce qui veut dire que la zone a été nettoyée, et que le NPC a pu avoir son message Divin.
+	Global("CKquete1","GLOBAL",6)  // Variable qui lance la quete
 THEN
- RESPONSE #100
-    SetGlobal("CKquete1","GLOBAL",7) //La quete est lancée
+	RESPONSE #100
+		SetGlobal("CKquete1","GLOBAL",7) //La quete est lancée
 END
 
 // 0 : Quete non lancée
@@ -63,120 +68,137 @@ END
 // 7 : Kobolds a l'entrée du temple // L'antipaladin est arrivée a la CdC
 // 8 : Le paladin est arrivé dans le temple, ainsi que les acolytes
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Produire acide///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//Produire acide//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 IF
- Global("CKacide","GLOBAL",0)  // Variable qui lance le dialogue
+	Global("CKacide","GLOBAL",0)  // Variable qui lance le dialogue
 THEN
- RESPONSE #100
-    SetGlobal("CKacide","GLOBAL",1) //<-- Action : Saerileth s'adresse à <CHARNAME>
+	RESPONSE #100
+		SetGlobal("CKacide","GLOBAL",1) //<-- Action
 END
 
 IF
-  Global("CKacide","GLOBAL",2)
-  PartyRested()
+	Global("CKacide","GLOBAL",2)
+	PartyRested()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  SetGlobal("CKacide","GLOBAL",1) //<-- Action : Saerileth s'adresse à <CHARNAME>
+	RESPONSE #100
+		SetGlobal("CKacide","GLOBAL",1) //<-- Action
 END
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Manger les items de pouvoir.///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//Manger les items de pouvoir.////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
-//Ecaille dragon rouge//////////////////////////////////////////////////////////////////////////
-//Ecailles Firkarg                                                                            //
-IF                                                                                            //
- PartyHasItem("SCALER")                                                                       //
- AreaCheck("AR1203")                                                                          //
- Global("CKecailleR","GLOBAL",0)  // Variable qui lance le dialogue                           //
-THEN                                                                                          //
- RESPONSE #100                                                                                //
-  SetGlobal("CKecailleR","GLOBAL",1)// 1=le dialogue est lancé                                //
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>                 //
-END                                                                                           //
-// Saladrex TdG                                                                               //
-IF                                                                                            //
- PartyHasItem("SCALER")//<-- Condition : Le groupe possède l'item                             //
- AreaCheck("AR3018")                                                                          //
- Global("CKecailleR2","GLOBAL",0)  // Variable qui lance le dialogue                          //
-THEN                                                                                          //
- RESPONSE #100                                                                                //
-  SetGlobal("CKecailleR2","GLOBAL",1)// 1=le dialogue est lancé                               //
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>                 //
-END                                                                                           //
-////////////////////////////////////////////////////////////////////////////////////////////////
+//Ecaille dragon rouge////////////////////////////////////////////////////////////////////
+//Ecailles Firkarg
+IF
+	PartyHasItem("SCALER")
+//	AreaCheck("AR1203")
+	Global("CKecailleR","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("CKecailleR","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
+END
+// Saladrex TdG
+IF
+	PartyHasItem("SCALER")//<-- Condition : Le groupe possède l'item
+//	AreaCheck("AR3018")
+	Global("CKecailleR2","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("CKecailleR2","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
+END
+//////////////////////////////////////////////////////////////////////////////////////////
 
-//Ecaille dragon noir//Ombre////////////////////////////////////////////////////////////////////
-//Ecailles noires : Pattes d'ombre : Bottes                                                   //
-IF                                                                                            //
- PartyHasItem("SCALEB")//<-- Condition : Le groupe possède l'item                             //
- AreaCheck("AR1402")                                                                          //
- Global("CKecailleN","GLOBAL",0)  // Variable qui lance le dialogue                           //
-THEN                                                                                          //
- RESPONSE #100                                                                                //
-  SetGlobal("CKecailleN","GLOBAL",1)// 1=le dialogue est lancé                                //
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>                 //
-END                                                                                           //
-//Ecailles noires : Irenicus : Griffes de dragonne.                                           //
-IF                                                                                            //
- PartyHasItem("SCALEB")//<-- Condition : Le groupe possède l'item                             //
- AreaCheck("AR2807")                                                                          //
- Global("CKecailleN2","GLOBAL",0)  // Variable qui lance le dialogue                           //
-THEN                                                                                          //
- RESPONSE #100                                                                                //
-  SetGlobal("CKecailleN2","GLOBAL",1)// 1=le dialogue est lancé                                //
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>                 //
-END                                                                                           //
-////////////////////////////////////////////////////////////////////////////////////////////////
+//Ecaille dragon noir//Ombre//////////////////////////////////////////////////////////////
+//Ecailles noires : Pattes d'ombre : Bottes
+IF
+	PartyHasItem("SCALEB")//<-- Condition : Le groupe possède l'item
+//	AreaCheck("AR1402")
+	Global("CKecailleN","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("CKecailleN","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
+END
+//Ecailles noires : Irenicus : Griffes de dragonne.
+IF
+	PartyHasItem("SCALEB")//<-- Condition : Le groupe possède l'item
+//	AreaCheck("AR2807")
+	Global("CKecailleN2","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("CKecailleN2","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
+END
+//////////////////////////////////////////////////////////////////////////////////////////
 
 //Ecaille dragon bleu/papa////////////////////////////////////////////////////////////
 IF
- PartyHasItem("COMPON19")//<-- Condition : Le groupe possède l'item
- Global("CKecailleB","GLOBAL",0)  // Variable qui lance le dialogue
+	PartyHasItem("COMPON19")//<-- Condition : Le groupe possède l'item
+	Global("CKecailleB","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
 THEN
- RESPONSE #100
-  SetGlobal("CKecailleB","GLOBAL",1)// 1=le dialogue est lancé
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>
+	RESPONSE #100
+		SetGlobal("CKecailleB","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
 END
 
 
 //Sang Dragon argent/////////////////////////////////////////////////////////////////
 IF
- PartyHasItem("MISC8H")//<-- Condition : Le groupe possède l'item
- Global("CKsangDB","GLOBAL",0)  // Variable qui lance le dialogue
+	PartyHasItem("MISC8H")//<-- Condition : Le groupe possède l'item
+	Global("CKsangDB","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
 THEN
- RESPONSE #100
-  SetGlobal("CKsangDB","GLOBAL",1)// 1=le dialogue est lancé
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>
+	RESPONSE #100
+		SetGlobal("CKsangDB","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
 END
 
-//Coeur démon (plan enfer)/////////////////////////////////////////////////////////////////
+//Coeur démon (plan enfer)////////////////////////////////////////////////////////////////
 IF
- PartyHasItem("MISC6M")//<-- Condition : Le groupe possède l'item
- Global("CKdemonC","GLOBAL",0)  // Variable qui lance le dialogue
+	PartyHasItem("MISC6M")//<-- Condition : Le groupe possède l'item
+	Global("CKdemonC","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
 THEN
- RESPONSE #100
-  SetGlobal("CKdemonC","GLOBAL",1)// 1=le dialogue est lancé
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>
+	RESPONSE #100
+		SetGlobal("CKdemonC","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
 END
 
-//Ecaille Dragon blanc TdD/////////////////////////////////////////////////////////////////
+//Ecaille Dragon blanc TdD////////////////////////////////////////////////////////////////
 IF
- PartyHasItem("COMPON")//<-- Condition : Le groupe possède l'item
- Global("CKecailleDBl","GLOBAL",0)  // Variable qui lance le dialogue
+	PartyHasItem("COMPON18")//<-- Condition : Le groupe possède l'item
+	Global("CKecailleDBl","GLOBAL",0)  // Variable qui lance le dialogue
+	!ActuallyInCombat()
+	!StateCheck("CKLysre",CD_STATE_NOTVALID)
 THEN
- RESPONSE #100
-  SetGlobal("CKecailleDBl","GLOBAL",1)// 1=le dialogue est lancé
-  StartDialogueNoSet(Player1) //<-- Action : Saerileth s'adresse à <CHARNAME>
+	RESPONSE #100
+		SetGlobal("CKecailleDBl","GLOBAL",1)// 1=le dialogue est lancé
+		StartDialogueNoSet(Player1) //<-- Action
 END
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Equilibrer l'xp ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//Equilibrer l'xp ////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // 800000
 IF
 InParty(Myself)
@@ -226,9 +248,11 @@ END
 
 // Hotkey fixer
 IF
-HotKey(K)
+	HotKey(K)
+	InParty("CKLysre")
+	!ActuallyInCombat()
 THEN
-RESPONSE #100
-StartCutSceneMode()
-StartCutScene("CKLysreF")
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("CKLysreF")
 END

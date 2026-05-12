@@ -221,13 +221,13 @@ COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/BCKLysre.d~ // TODO DOUBLE CHECK
 
 //Apparition du PC et des NPC // TODO DOUBLE CHECK
 //Lysre
-EXTEND_TOP ~AR0710.bcs~ ~Lysre/Scripts/AR0710.baf~ // TODO ADD Continue()
+EXTEND_BOTTOM ~AR0710.bcs~ ~Lysre/Scripts/AR0710.baf~
 
 //NPC quete 1
 
-EXTEND_TOP ~AR0202.bcs~ ~Lysre/Scripts/AR0202.baf~ // TODO ADD Continue()
-EXTEND_TOP ~AR1005.bcs~ ~Lysre/Scripts/AR1005.baf~ //Prison // TODO ADD Continue()
-EXTEND_TOP ~AR0406.bcs~ ~Lysre/Scripts/AR0406.baf~ //CdC // TODO ADD Continue()
+EXTEND_BOTTOM ~AR0202.bcs~ ~Lysre/Scripts/AR0202.baf~ //Œil Aveugle
+EXTEND_TOP ~AR1005.bcs~ ~Lysre/Scripts/AR1005.baf~ //Prison
+EXTEND_BOTTOM ~AR0406.bcs~ ~Lysre/Scripts/AR0406.baf~ //CdC
 
 ///////////////////////////////////////////////////////////
 
@@ -305,7 +305,7 @@ END
 
 //////////////////////////////////////
 
-EXTEND_TOP ~AR6200.bcs~ ~Lysre/Scripts/AR6200.baf~ //Apparition du NPC dans TOB (inutile) // TODO ADD Continue()
+EXTEND_TOP ~AR6200.bcs~ ~Lysre/Scripts/AR6200.baf~ //Apparition du NPC dans TOB (inutile) // TODO Unused ?
 
 COPY ~Lysre/Epilogue/CKLysrzz.2da~ ~override/CKLysr01.2da~ // TODO DOUBLE CHECK
 REPLACE ~99999~ @45
