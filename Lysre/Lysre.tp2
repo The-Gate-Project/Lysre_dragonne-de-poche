@@ -9,7 +9,7 @@ Sur la base du mod Brawen NPC~
 
 // README ~~
 
-VERSION ~1.3~
+VERSION ~1.3~ // TODO use prefixes
 
 ///////////////////////////////////////////////////////////
 
@@ -193,6 +193,17 @@ SAY TARGET_IMMUNE @41
 SAY INVENTORY_FULL @42
 SAY SPELL_DISRUPTED @43
 SAY BIO @44
+REPLACE_CRE_ITEM ~CKaille1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~armor~
+REPLACE_CRE_ITEM ~CKaillb1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~shield~
+REPLACE_CRE_ITEM ~CKcoeur1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~gloves~
+REPLACE_CRE_ITEM ~CKaille1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~belt~
+REPLACE_CRE_ITEM ~CKpatte1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~boots~
+REPLACE_CRE_ITEM ~CKriffe1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON1~
+REPLACE_CRE_ITEM ~CKacide1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON2~
+REPLACE_CRE_ITEM ~CKaillc1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~cloak~
+REPLACE_CRE_ITEM ~CKBoucle~ #0 #0 #0 ~identified&unstealable&undroppable~ ~qitem1~ // TODO item_use ?
+WRITE_ASCII 0x034 ~CKLysreS~ (8)	// Small portrait
+WRITE_ASCII 0x03c ~CKLysreL~ (8)	// Large portrait
 
 //Test programme
 WRITE_ASCII 0x248 ~CKLysreS~ #8  // override script where you put all the commands for lovetalks and such.
@@ -269,6 +280,17 @@ SAY TARGET_IMMUNE @41
 SAY INVENTORY_FULL @42
 SAY SPELL_DISRUPTED @43
 SAY BIO @44
+REPLACE_CRE_ITEM ~CKaille1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~armor~
+REPLACE_CRE_ITEM ~CKaillb1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~shield~
+REPLACE_CRE_ITEM ~CKcoeur1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~gloves~
+REPLACE_CRE_ITEM ~CKaille1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~belt~
+REPLACE_CRE_ITEM ~CKpatte1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~boots~
+REPLACE_CRE_ITEM ~CKriffe1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON1~
+REPLACE_CRE_ITEM ~CKacide1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON2~
+REPLACE_CRE_ITEM ~CKaillc1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~cloak~
+REPLACE_CRE_ITEM ~CKBoucle~ #0 #0 #0 ~identified&unstealable&undroppable~ ~qitem1~ // TODO item_use ?
+WRITE_ASCII 0x034 ~CKLysreS~ (8)	// Small portrait
+WRITE_ASCII 0x03c ~CKLysreL~ (8)	// Large portrait
 
 COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/BCKLys25.d~ // TODO DOUBLE CHECK
 						~Lysre/Dialogue/CKLysr25.d~
@@ -323,79 +345,79 @@ END
 /////////////////////////////////////////////////////////////////////
 //Ajout des objets ////////////////////////////////////////////////// // TODO DOUBLE CHECK
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/ecaille1.itm~ ~override~
+COPY ~Lysre/items/ecaille1.itm~ ~override/CKaille1.ITM~
   SAY NAME1 @2000
   SAY NAME2 @2000
   SAY DESC  @2001
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/coeur1.itm~ ~override~
+COPY ~Lysre/items/coeur1.itm~ ~override/CKcoeur1.ITM~
   SAY NAME1 @2000
   SAY NAME2 @2000
   SAY DESC  @2001
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/coeur2.itm~ ~override~
+COPY ~Lysre/items/coeur2.itm~ ~override/CKcoeur2.ITM~
   SAY NAME1 ~Coeurs de démons~
   SAY NAME2 ~Coeurs de démons~
   SAY DESC ~Vous avez vu Lysre arracher le coeur d'un démon et l'avaler d'un bloc. Depuis vous sentez parfois comme les échos d'une multitude de battements provenant d'elle.
 C'est toujours à ce moment qu'elle vous observe en souriant, comme si la sensation de malaise que vous ressentez l'amuse.~
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/ecaille2.itm~ ~override~
+COPY ~Lysre/items/ecaille2.itm~ ~override/CKaille2.ITM~
   SAY NAME1 @2004
   SAY NAME2 @2004
   SAY DESC  @2005
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/ecaillb1.itm~ ~override~
+COPY ~Lysre/items/ecaillb1.itm~ ~override/CKaillb1.ITM~
   SAY NAME1 @2000
   SAY NAME2 @2000
   SAY DESC  @2001
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/ecaillb2.itm~ ~override~
+COPY ~Lysre/items/ecaillb2.itm~ ~override/CKaillb2.ITM~
   SAY NAME1 @2006
   SAY NAME2 @2006
   SAY DESC  @2007
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/ecaillc1.itm~ ~override~
+COPY ~Lysre/items/ecaillc1.itm~ ~override/CKaillc1.ITM~
   SAY NAME1 @2000
   SAY NAME2 @2000
   SAY DESC  @2001
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/ecaillc2.itm~ ~override~
+COPY ~Lysre/items/ecaillc2.itm~ ~override/CKaillc2.ITM~
   SAY NAME1 @2002
   SAY NAME2 @2002
   SAY DESC  @2003
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/acide1.itm~ ~override~
+COPY ~Lysre/items/acide1.itm~ ~override/CKacide1.ITM~
   SAY NAME1 @2011
   SAY NAME2 @2011
   SAY DESC  @2012
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/griffe1.itm~ ~override~
+COPY ~Lysre/items/griffe1.itm~ ~override/CKriffe1.ITM~
   SAY NAME1 @2008
   SAY NAME2 @2008
   SAY DESC  @2010
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/patte1.itm~ ~override~
+COPY ~Lysre/items/patte1.itm~ ~override/CKpatte1.ITM~
   SAY NAME1 @2008
   SAY NAME2 @2008
   SAY DESC  @2009
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/patte2.itm~ ~override~
+COPY ~Lysre/items/patte2.itm~ ~override/CKpatte2.ITM~
   SAY NAME1 @2013
   SAY NAME2 @2013
   SAY DESC  @2014
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/Boucle.itm~ ~override~
+COPY ~Lysre/items/Boucle.itm~ ~override/CKBoucle.ITM~
   SAY NAME1 @2015
   SAY NAME2 @2015
   SAY DESC  @2016
@@ -407,13 +429,13 @@ COPY ~Lysre/items/CKBull.itm~ ~override~
   SAY DESC  @2018
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/Ecaille3.itm~ ~override~
+COPY ~Lysre/items/Ecaille3.itm~ ~override/CKaille3.ITM~
   SAY NAME1 @2019
   SAY NAME2 @2019
   SAY DESC  @2020
 
 /////////////////////////////////////////////////////////////////////
-COPY ~Lysre/items/Griffe2.itm~ ~override~
+COPY ~Lysre/items/Griffe2.itm~ ~override/CKriffe2.ITM~
   SAY NAME1 @2021
   SAY NAME2 @2021
   SAY DESC  @2022
