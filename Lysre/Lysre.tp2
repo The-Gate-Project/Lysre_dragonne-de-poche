@@ -272,7 +272,7 @@ EXTEND_BOTTOM ~AR0406.bcs~ ~Lysre/Scripts/AR0406.baf~ // CdC
 
 	ACTION_IF GAME_IS ~tob bg2ee eet bgt~ BEGIN
 
-COPY ~Lysre/Characters/CKLysr25.cre~ ~override/CKLysr25.cre~ // TODO prep for tob need to add relevant attribut from bg2 story
+COPY ~Lysre/Characters/CKLysr25.cre~ ~override/CKLysr25.cre~
 SAY NAME1 @1
 SAY NAME2 @1
 SAY INITIAL_MEETING @2
@@ -507,7 +507,7 @@ PARAMETRES :
 Bonus de Classe d'Armure : +1
 Poids : 2~
 
-//Ajout de sorts///////////////////////////////////////////////////// // TODO DOUBLE CHECK // GREEHIT.PRO
+//Ajout de sorts/////////////////////////////////////////////////////
 
 COPY ~Lysre/Pro/CKhdfbr.bam~ ~override~
 
@@ -565,6 +565,7 @@ STR_VAR
   clab_path = EVAL ~Lysre/Kit/CKTiam.2da~
 // races et classes de PJ autorisées à utiliser ce kit (humain = K_S_H)
     //  kittable  = ~K_S_H    K_S_D   K_S_G   K_S_E   K_S_HE   K_S_HL   K_S_H~ // Sorcerer kit : to enable for PJ
+  kittable  = ~0       0       0       0       0       0       0~ // Sorcerer kit
 // Table de HLA à utiliser. Voir LUABBR.2da
   luabbr    = ~Ma0~
     //  stweap    = ~~

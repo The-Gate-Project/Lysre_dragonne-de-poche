@@ -157,7 +157,6 @@ END
 //LIEUX////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //PLAN INFERNAL
 IF ~InParty("CKLysre")
-See("CKLysre")
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 AreaCheck("AR0414")~ CKenenfer
 SAY ~Mmm... Cette odeur... Cette tension. Nous ne sommes pas dans le domaine de notre Reine, mais il y a ce doux parfum de danger ici... C'est un lieu charmant où chaque journée n'est que combat pour survivre. Le plan matériel est si paisible en comparaison.~
@@ -167,7 +166,6 @@ SAY ~Mmm... Cette odeur... Cette tension. Nous ne sommes pas dans le domaine de 
 END
 
 IF ~InParty("CKLysre")
-See("CKLysre")
 !StateCheck("CKLysre",CD_STATE_NOTVALID)
 AreaCheck("AR0414")~ CKenenfer2
 SAY ~Oui... Mais je n'ai pas l'envie de m'étendre des heures sur mes prouesses en ces lieux, il me faudrait des bardes pour que je perde le temps a être nostalgique. Si nous chassions un démon ou deux plutôt que de s'étendre sur moi?~
