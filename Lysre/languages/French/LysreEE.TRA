@@ -1,0 +1,34 @@
+//.Banters personnages EE  ////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Dorn/////////////
+//SOA
+@0 = ~Tu es un grand combattant Dorn... Dommage que tu ne serves pas le bon maître.~
+@1 = ~C'est toi qui sert la mauvaise personne Dragonne.~
+@2 = ~Nous pourrions nous injurier, nous entre-tuer pour en discuter en détail.. Mais ce serait une perte pour les enfers... ~
+@3 = ~C'est un fait.~
+@4 = ~Tu n'es pas tout a fait de mauvaise compagnie.~
+@5 = ~Toi non plus.~
+
+//ToB
+@6 = ~Mmmm, j'approche de ma vengeance, ça va être une belle journée... Sanglante...~
+@7 = ~S'il faut tuer quelqu'un je suis toujours de la partie.~
+@8 = ~Tu as prouve que peu de chose peuvent te résister oui, tu seras loin d'être inutile.~
+@9 = ~Toujours a mêler insulte et compliment.~
+@10 = ~Tu m’apprécies pour ça.~
+@11 = ~C'est un fait.~
+
+//Hexatt///////////
+@12 = ~Une vampire... <CHARNAME> aime s'entourer de drôle de créatures! ~
+@13 = ~Tu peux parler, t'es tu seulement regardée.~
+@14 = ~La vue de mon corps parfait est un don pour vous, misérables bipèdes. On ne peux pas en dire autant de ton cadavre défraîchi.~
+@15 = ~Je pense que nous n'avons rien d'autre a nous dire.~
+
+// Neera///////////////////////////////
+@16 = ~Une bipède manipulant une force qui la dépasse... <CHARNAME> fait preuve d'un manque cruel d'intelligence dans le choix de son entourage~
+@17 = ~Évidement, puisqu'il tolère une petite dragonne arrogante.~
+@18 = ~Je ne risque pas de finir en cendre a chaque fois que j'use de mes talents, j'attendrais que ta malchance te rattrape, j'ai le temps.~
+@19 = ~Humpf~
+
+
+// Raasad///////////////////////////////

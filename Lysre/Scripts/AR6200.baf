@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("CKLysreBio","GLOBAL",1)
-		TextScreen("CKLysre01")
+		TextScreen("CKLysr01")
 		SmallWait(1)
 		Continue()
 END

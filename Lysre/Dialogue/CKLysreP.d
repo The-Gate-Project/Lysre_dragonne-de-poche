@@ -10,7 +10,7 @@ END
 
 //Rupture de contrat à cause de deux abandons //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 IF ~Global("CKLysreKickedOut","GLOBAL",2) HappinessLT(Myself,-299)~ CKLysreVeryEvilKickedOut2
-SAY ~Je vous avais prévenu <CHARNAME> Je ne suis pas un chien vous suivant selon votre bon vouloir. Vous vendez de rompre notre contrat. J'en ai assez de vous, de vos manières. Puissiez vous vous étouffer dans votre sommeil et finir au plus profond des enfers.~
+SAY ~Je vous avais prévenu <CHARNAME> Je ne suis pas un chien vous suivant selon votre bon vouloir. Vous venez de rompre notre contrat. J'en ai assez de vous, de vos manières. Puissiez vous vous étouffer dans votre sommeil et finir au plus profond des enfers.~
 IF ~~ DO ~EscapeArea()~ EXIT
 END
 
@@ -59,7 +59,7 @@ END
 IF ~Global("CKLysreKickedOut","GLOBAL",1)~ CKLysreMetAfterKickOut1
 SAY ~Enfin vous revoilà, qu'attendiez vous pour venir me chercher ?~
 ++ ~J'ai eu un petit contretemps, reprenons notre chemin ensemble Lysre.~ + CKLysreMetAgain1
-++ ~J'ai besoin d'encore un peu de temps. Desole.~ + CKLysreVeryEvilKickedOut3
+++ ~J'ai besoin d'encore un peu de temps. Désole.~ + CKLysreVeryEvilKickedOut3
 END
 
 IF ~~ CKLysreMetAgain1

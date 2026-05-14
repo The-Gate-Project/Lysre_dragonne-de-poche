@@ -25,25 +25,25 @@ END
 
 //Manger dragon/////////////////////////////////////////////////////////
 //Ecaille rouge   AR1203
-IF ~Global("CKecailleR","GLOBAL",1)!PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
+IF ~Global("CKecailleR","GLOBAL",1) !PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
  SAY ~Ainsi s'achève l'existence d'un congénère. Comme j'en suis attristée... Mais dites moi, <CHARNAME> bien que je vois déjà briller la convoitise dans vos yeux d'être inférieur, j'avoue désirer cette dépouille encore chaude autant que vous. Laissez moi, je vous prie, dévorer ce dragon. Idéalement, j'aurais aimé qu'il pourrisse, mais votre vie est trop limitée pour en faire un met de choix. Il n'en restera plus grand chose, sa chair, son sang, ses os, ses entrailles. Tout ira a Tiamat.~
 ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleR","GLOBAL",2) TakePartyItem("SCALER") DestroyItem("SCALER") TakeItemReplace("CKaille2","CKaille1","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKecailleR","GLOBAL",3) ~ + CKMOERnon
 END
-IF ~Global("CKecailleR","GLOBAL",1)PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
+IF ~Global("CKecailleR","GLOBAL",1) PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
  SAY ~Ainsi s'achève l'existence d'un congénère. Comme j'en suis attristée... Mais dites moi, <CHARNAME> bien que je vois déjà briller la convoitise dans vos yeux d'être inférieur, j'avoue désirer cette dépouille encore chaude autant que vous. Laissez moi, je vous prie, dévorer ce dragon. Idéalement, j'aurais aimé qu'il pourrisse, mais votre vie est trop limitée pour en faire un met de choix. Il n'en restera plus grand chose, sa chair, son sang, ses os, ses entrailles. Tout ira a Tiamat.~
 ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleR","GLOBAL",2) TakePartyItem("SCALER") DestroyItem("SCALER") TakeItemReplace("CKaille3","CKaille2","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKecailleR","GLOBAL",3) ~ + CKMOERnon
 END
 
 //Ecaille rouge  AR3018
-IF ~Global("CKecailleR2","GLOBAL",1)!PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
+IF ~Global("CKecailleR2","GLOBAL",1) !PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
  SAY ~Ainsi s'achève l'existence d'un congénère. Comme j'en suis attristée... Mais dites moi, <CHARNAME> bien que je vois déjà briller la convoitise dans vos yeux d'être inférieur, j'avoue désirer cette dépouille encore chaude autant que vous. Laissez moi, je vous prie, dévorer ce dragon. Idéalement, j'aurais aimé qu'il pourrisse, mais votre vie est trop limitée pour en faire un met de choix. Il n'en restera plus grand chose, sa chair, son sang, ses os, ses entrailles. Tout ira a Tiamat.~
 ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleR2","GLOBAL",2) TakePartyItem("SCALER") DestroyItem("SCALER") TakeItemReplace("CKaille2","CKaille1","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKecailleR2","GLOBAL",3) ~ + CKMOERnon
 END
 
-IF ~Global("CKecailleR2","GLOBAL",1)PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
+IF ~Global("CKecailleR2","GLOBAL",1) PartyHasItem("CKaille2")~ THEN BEGIN CKMangerledragonrouge
  SAY ~Ainsi s'achève l'existence d'un congénère. Comme j'en suis attristée... Mais dites moi, <CHARNAME> bien que je vois déjà briller la convoitise dans vos yeux d'être inférieur, j'avoue désirer cette dépouille encore chaude autant que vous. Laissez moi, je vous prie, dévorer ce dragon. Idéalement, j'aurais aimé qu'il pourrisse, mais votre vie est trop limitée pour en faire un met de choix. Il n'en restera plus grand chose, sa chair, son sang, ses os, ses entrailles. Tout ira a Tiamat.~
 ++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKecailleR2","GLOBAL",2) TakePartyItem("SCALER") DestroyItem("SCALER") TakeItemReplace("CKaille3","CKaille2","CKLysre")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKecailleR2","GLOBAL",3) ~ + CKMOERnon
@@ -65,7 +65,7 @@ END
 //Sang dragon argenté
 IF ~!PartyHasItem("LEAT22") Global("CKsangDB","GLOBAL",1)~ THEN BEGIN CKMangerledragonblanc
  SAY ~L'idée de manger une des filles de Bahamut me répugne quelque peu... mais je doute que Tiamat pardonne cette hésitation au moment de montrer qui sont les Véritables Dragons. <CHARNAME>? Laissez moi dévorer ce dragon je vous prie.~
-++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKsangDB","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H") AddSpecialAbility("CKsoin") ~ + PriereTiamatRepas
+++ ~D'accord, mais fait vite~ DO ~SetGlobal("CKsangDB","GLOBAL",2) TakePartyItem("MISC8H") DestroyItem("MISC8H") AddSpecialAbility("CKsoin")~ + PriereTiamatRepas
 ++ ~Certainement pas~ DO ~SetGlobal("CKsangDB","GLOBAL",3) ~ + CKMOERnon
 END
 
@@ -113,7 +113,7 @@ END
 //Prière/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 IF ~~ THEN BEGIN PriereTiamatRepas
  SAY ~Louée soyez vous, oh révérée Tiamat. Ô, grande Reine des Dragons. Permettez à votre disciple de poursuivre sur votre voie, appréciez cette offrande en votre nom, en votre honneur. Soyez respectée, soyez crainte vous qui régnerez un jour sur les plans.~
-IF ~~  +PriereTiamatRepas2
+IF ~~  + PriereTiamatRepas2
 END
 
 IF ~~ THEN BEGIN PriereTiamatRepas2

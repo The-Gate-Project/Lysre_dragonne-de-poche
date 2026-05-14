@@ -8,7 +8,10 @@
 ////////////////////////////////////////////////////////////////////////////
 IF
 	Global("CKLysreintro","LOCALS",0)
-	Global("CKLysreSpawn","GLOBAL",1)
+	Global("CKSummon_ToB","LOCALS",0)
+	OR(2)
+		Global("CKLysreSpawn","GLOBAL",1)
+		AreaCheck("AR4500")
 THEN
 	RESPONSE #100
 		StartDialogueNoSet([PC])
@@ -99,6 +102,7 @@ IF
 	Global("CKecailleR","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKecailleR","GLOBAL",1)// 1=le dialogue est lancé
@@ -111,10 +115,12 @@ IF
 	Global("CKecailleR2","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKecailleR2","GLOBAL",1)// 1=le dialogue est lancé
-		StartDialogueNoSet(Player1) //<-- Action
+//		StartDialogueNoSet(Player1) //<-- Action
+		StartDialogue("CKLysreJ",Player1) // Adapt for ToB only
 END
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -126,6 +132,7 @@ IF
 	Global("CKecailleN","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKecailleN","GLOBAL",1)// 1=le dialogue est lancé
@@ -138,6 +145,7 @@ IF
 	Global("CKecailleN2","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKecailleN2","GLOBAL",1)// 1=le dialogue est lancé
@@ -151,6 +159,7 @@ IF
 	Global("CKecailleB","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKecailleB","GLOBAL",1)// 1=le dialogue est lancé
@@ -164,6 +173,7 @@ IF
 	Global("CKsangDB","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKsangDB","GLOBAL",1)// 1=le dialogue est lancé
@@ -176,6 +186,7 @@ IF
 	Global("CKdemonC","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKdemonC","GLOBAL",1)// 1=le dialogue est lancé
@@ -188,10 +199,12 @@ IF
 	Global("CKecailleDBl","GLOBAL",0)  // Variable qui lance le dialogue
 	!ActuallyInCombat()
 	!StateCheck("CKLysre",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("CKecailleDBl","GLOBAL",1)// 1=le dialogue est lancé
-		StartDialogueNoSet(Player1) //<-- Action
+//		StartDialogueNoSet(Player1) //<-- Action
+		StartDialogue("CKLysreJ",Player1) // Adapt for ToB only
 END
 
 

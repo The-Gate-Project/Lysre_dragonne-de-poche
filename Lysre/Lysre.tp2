@@ -1,4 +1,4 @@
-BACKUP ~Lysre/Backup~
+BACKUP ~weidu_external/Lysre/Backup~
 
 AUTHOR ~Mod NPC : Lysre
 Auteur : Klare.
@@ -9,7 +9,7 @@ Sur la base du mod Brawen NPC~
 
 // README ~~
 
-VERSION ~1.3~ // TODO use prefixes
+VERSION ~1.3~
 
 ///////////////////////////////////////////////////////////
 
@@ -30,11 +30,35 @@ ALWAYS
 
 //Fin du Bloc de controle 1 ///////////////////////////////
 
-// TODO AUTOTRA HANDLE_CHARSET
+	DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+	COPY ~Lysre/Languages/French~				~weidu_external/Lysre/Languages/autotra/%LANGUAGE%~
+	COPY ~Lysre/Languages/%LANGUAGE%~				~weidu_external/Lysre/Languages/autotra/%LANGUAGE%~
+	END
+
+	LAF autotra_workaround END
+
+	ACTION_IF GAME_IS ~tob bgt~ BEGIN
+
+//			ACTION_DEFINE_ARRAY CK_noconvert BEGIN END
+
+		ACTION_DEFINE_ARRAY CK_reload BEGIN Setup-Lysre END
+			LAF HANDLE_CHARSETS
+				INT_VAR
+				infer_charsets = 1
+				from_utf8      = 1
+				STR_VAR
+				tra_path = EVAL ~weidu_external/Lysre/Languages/autotra~
+				out_path = EVAL ~weidu_external/Lysre/Languages/autotra~
+				iconv_path = ~Lysre/Languages/autotra/iconv~
+//				noconvert_array = CK_noconvert
+				reload_array = CK_reload
+			END
+
+	END // GAME_IS ~tob bgt~
 
 //Bloc de controle 2 : neccessaire au Kit /////////////////
 
-	INCLUDE ~Lysre/Kit/fl#add_kit_ee.tpa~ // TODO A7-ADD-KIT
+	INCLUDE ~Lysre/Kit/a7#add_kit_ex.tpa~
 
 //Fin du Bloc de controle 2 ///////////////////////////////
 
@@ -45,19 +69,28 @@ END // ALWAYS
 ///////////////////////////////////////////////////////////
 //Langues et traductions possibles  ///////////////////////
 
-AUTO_TRA ~Lysre/%s~ // TODO FOLDERS
+AUTO_TRA ~weidu_external/Lysre/Languages/autotra/%s~
 
-LANGUAGE ~French~  ~French~  ~Lysre/French/Setup-Lysre.tra~
+LANGUAGE ~French~
+		 ~French~
+		 ~Lysre/Languages/French/Setup-Lysre.tra~
 
 // Fin bloc langues  ////////////////////////////////////////
 
 
 
 BEGIN @0
+DESIGNATED 0
+LABEL ~Klare-Lysre~
+REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ ~This mod need BG2, BG2EE, BGT or EET~
 
-ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
-LOAD_TRA ~Lysre/%LANGUAGE%/Setup-Lysre-EE.tra~ // TODO DELETE
-ADD_JOURNAL @24 USING ~Lysre/%LANGUAGE%/CKLysre.tra~ // TODO DON'T EXISTS
+// Recolored wyvern_familiar animation for Lysre
+	INCLUDE ~Lysre/Lib/Lysre_dragon_Animation.tph~
+
+// Tra pour l'ajout des dialogues avec NPC pour EE
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	LOAD_TRA ~weidu_external/Lysre/Languages/autotra/%LANGUAGE%/Setup-Lysre-EE.tra~
+// ADD_JOURNAL @24 USING ~weidu_external/Lysre/Languages/autotra/%LANGUAGE%/CKLysre.tra~ // Not implemented
 END
 
 APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
@@ -127,7 +160,7 @@ COMPILE ~Lysre/Dialogue/Quete1/CKVarsco.d~ //Ajout dialogue // TODO DOUBLE CHECK
 //Ajout de la fonction temple de Tiamat////////////////////////////////////////////////
 
 COPY ~Lysre/boutiques/CKtiamat.STO~ ~override/CKtiamat.STO~
-  SAY NAME2 ~Temple de Tiamat~
+  SAY STORE_NAME ~Temple de Tiamat~
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -204,16 +237,20 @@ REPLACE_CRE_ITEM ~CKaillc1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~cloak
 REPLACE_CRE_ITEM ~CKBoucle~ #0 #0 #0 ~identified&unstealable&undroppable~ ~qitem1~ // TODO item_use ?
 WRITE_ASCII 0x034 ~CKLysreS~ (8)	// Small portrait
 WRITE_ASCII 0x03c ~CKLysreL~ (8)	// Large portrait
+	WRITE_LONG 0x28 IDS_OF_SYMBOL ("ANIMATE" "CKLysre_dragon")
+
 
 //Test programme
 WRITE_ASCII 0x248 ~CKLysreS~ #8  // override script where you put all the commands for lovetalks and such.
-WRITE_ASCII 0x2cc ~CKLysre~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
-WRITE_ASCII 0x280 ~CKLysre~  #32 // death variable - when we want to refer to Branwen in the game
+WRITE_ASCII 0x2cc ~CKLysre~  #8  // dialogue file where we'll put Lysre's greeting dialogue.
+WRITE_ASCII 0x280 ~CKLysre~  #32 // death variable - when we want to refer to Lysre in the game
+WRITE_ASCII SCRIPT_GENERAL ~CKLysefS~  #8
 
 COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/BCKLysre.d~ // TODO DOUBLE CHECK
 						~Lysre/Dialogue/CKLysre.d~
 						~Lysre/Dialogue/CKLysreJ.d~
 						~Lysre/Dialogue/CKLysreP.d~
+						~Lysre/Scripts/CKLysefS.baf~
 						~Lysre/Scripts/CKLysreF.baf~
 						~Lysre/Scripts/CKLysreS.baf~
 
@@ -225,16 +262,17 @@ EXTEND_BOTTOM ~AR0710.bcs~ ~Lysre/Scripts/AR0710.baf~
 
 //NPC quete 1
 
-EXTEND_BOTTOM ~AR0202.bcs~ ~Lysre/Scripts/AR0202.baf~ //Œil Aveugle
-EXTEND_TOP ~AR1005.bcs~ ~Lysre/Scripts/AR1005.baf~ //Prison
-EXTEND_BOTTOM ~AR0406.bcs~ ~Lysre/Scripts/AR0406.baf~ //CdC
+EXTEND_BOTTOM ~AR0202.bcs~ ~Lysre/Scripts/AR0202.baf~ // Œil Aveugle
+EXTEND_TOP ~AR1005.bcs~ ~Lysre/Scripts/AR1005.baf~ // Prison
+EXTEND_BOTTOM ~AR0406.bcs~ ~Lysre/Scripts/AR0406.baf~ // CdC
 
 ///////////////////////////////////////////////////////////
 
 //Ajout du PC dragon. Lysre dans ToB////////////////////////////////////////////////////////////////////////
-ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN // TODO DELETE
 
-COPY ~Lysre/Characters/CKLysr25.cre~ ~override/CKLysr25.cre~
+	ACTION_IF GAME_IS ~tob bg2ee eet bgt~ BEGIN
+
+COPY ~Lysre/Characters/CKLysr25.cre~ ~override/CKLysr25.cre~ // TODO prep for tob need to add relevant attribut from bg2 story
 SAY NAME1 @1
 SAY NAME2 @1
 SAY INITIAL_MEETING @2
@@ -280,47 +318,58 @@ SAY TARGET_IMMUNE @41
 SAY INVENTORY_FULL @42
 SAY SPELL_DISRUPTED @43
 SAY BIO @44
-REPLACE_CRE_ITEM ~CKaille1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~armor~
+REPLACE_CRE_ITEM ~CKaille2~ #0 #0 #0 ~identified&unstealable&undroppable~ ~armor~
 REPLACE_CRE_ITEM ~CKaillb1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~shield~
-REPLACE_CRE_ITEM ~CKcoeur1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~gloves~
+REPLACE_CRE_ITEM ~CKcoeur2~ #0 #0 #0 ~identified&unstealable&undroppable~ ~gloves~
+ADD_CRE_ITEM ~CKIoniqu~ #0 #0 #0 ~identified~ ~helmet~
 REPLACE_CRE_ITEM ~CKaille1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~belt~
-REPLACE_CRE_ITEM ~CKpatte1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~boots~
-REPLACE_CRE_ITEM ~CKriffe1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON1~
+REPLACE_CRE_ITEM ~CKpatte2~ #0 #0 #0 ~identified&unstealable&undroppable~ ~boots~
+REPLACE_CRE_ITEM ~CKriffe2~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON1~
 REPLACE_CRE_ITEM ~CKacide1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~WEAPON2~
-REPLACE_CRE_ITEM ~CKaillc1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~cloak~
+REPLACE_CRE_ITEM ~CKaillc2~ #0 #0 #0 ~identified&unstealable&undroppable~ ~cloak~
 REPLACE_CRE_ITEM ~CKBoucle~ #0 #0 #0 ~identified&unstealable&undroppable~ ~qitem1~ // TODO item_use ?
 WRITE_ASCII 0x034 ~CKLysreS~ (8)	// Small portrait
 WRITE_ASCII 0x03c ~CKLysreL~ (8)	// Large portrait
+WRITE_BYTE 0x270 ~128~ // Allegiance neutral
+WRITE_ASCII SCRIPT_GENERAL ~CKLysefS~  #8
+WRITE_ASCII DIALOG ~CKLysr25~  #8
+	WRITE_LONG 0x28 IDS_OF_SYMBOL ("ANIMATE" "CKLysre_dragon")
 
 COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/BCKLys25.d~ // TODO DOUBLE CHECK
 						~Lysre/Dialogue/CKLysr25.d~
 						~Lysre/Dialogue/CKLys25J.d~
 						~Lysre/Dialogue/CKLys25P.d~
-						~Lysre/Scripts/CKLys25S.baf~
 
-//AJout des dialogues avec NPC de l'EE
-ACTION_IF GAME_IS ~BG2EE eet~ BEGIN
-COMPILE	~Lysre/Dialogue/LysreEE.d~
+// Ajout des dialogues avec NPC pour EE
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	COMPILE	~Lysre/Dialogue/LysreEE.d~
 END
 
 //////////////////////////////////////
 
-EXTEND_TOP ~AR6200.bcs~ ~Lysre/Scripts/AR6200.baf~ //Apparition du NPC dans TOB (inutile) // TODO Unused ?
+EXTEND_TOP ~AR6200.bcs~ ~Lysre/Scripts/AR6200.baf~ // Épilogue du NPC dans TOB
 
-COPY ~Lysre/Epilogue/CKLysrzz.2da~ ~override/CKLysr01.2da~ // TODO DOUBLE CHECK
+COPY ~Lysre/Epilogue/CKLysrzz.2da~ ~override/CKLysr01.2da~
 REPLACE ~99999~ @45
 
-END // ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ // TODO DELETE
+	END // GAME_IS ~tob bg2ee eet bgt~
 
-APPEND ~interdia.2da~ ~CKLysre       BCKLysre       BCKLys25~
-UNLESS ~CKLysre~ // TODO DOUBLE CHECK
+APPEND ~interdia.2da~ ~CKLysre       BCKLysre       BCKLys25~ UNLESS ~CKLysre~
 
-APPEND ~pdialog.2da~ ~CKLysre        CKLysreP             CKLysreJ            CKLysreD             CKLys25P             CKLys25J             CKLys25D       CKLys25S~
-UNLESS ~CKLysre~ // TODO DOUBLE CHECK
+APPEND ~pdialog.2da~ ~CKLysre        CKLysreP             CKLysreJ            CKLysreD             CKLys25P             CKLys25J             CKLys25D       CKLys25S~ UNLESS ~CKLysre~
+
+//////////////////////////////////////
 
 LAF HANDLE_AUDIO END
 
-ACTION_IF GAME_IS ~eet~ BEGIN // TODO DOUBLE CHECK
+//////////////////////////////////////
+
+
+	// Variable used by FUNCTION GW_FIND_DLG_RESPONSE_STRING to find after which transition NPC will be recalled by Fate Spirit.
+			OUTER_SET fatesp_string = 65012  // Korgan = @65012  = ~J'ai besoin de Korgan, le guerrier berserker nain.~
+
+ACTION_IF GAME_IS ~eet~ BEGIN
   INCLUDE ~EET/other/EET_functions.tph~
   LAF ~EET_NPC_TRANSITION~
     INT_VAR
@@ -330,16 +379,17 @@ ACTION_IF GAME_IS ~eet~ BEGIN // TODO DOUBLE CHECK
     STR_VAR
       dv = "CKLysre"
       override_SoA = "CKLysreS"
-      override_ToB = "CKLys25S"
+//      override_ToB = "CKLys25S"
       dialog_ToB = "CKLysr25"
       cre_ToB = "CKLysr25"
-      traFile = EVAL "Lysre/%LANGUAGE%/CKLys25J.tra"
-      string = "@8" //Bring me Lysre
-      stringPosDV = "Viconia"
+      traFile = EVAL "weidu_external/Lysre/Languages/autotra/%LANGUAGE%/SETUP-Lysre.tra"
+      string = "@49"
+      stringPosDV = "Minsc"
       clean_ToB_DV = "Lysre"
   END
 END ELSE BEGIN
-  COMPILE ~Lysre/Dialogue/FATESP.d~ USING ~Lysre/%LANGUAGE%/CKLys25J.tra~
+		INCLUDE ~Lysre/lib/gw_dlg_functions.tpa~
+  COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/FATESP.d~ USING ~weidu_external/Lysre/Languages/autotra/%LANGUAGE%/SETUP-Lysre.tra~
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -358,8 +408,8 @@ COPY ~Lysre/items/coeur1.itm~ ~override/CKcoeur1.ITM~
 
 /////////////////////////////////////////////////////////////////////
 COPY ~Lysre/items/coeur2.itm~ ~override/CKcoeur2.ITM~
-  SAY NAME1 ~Coeurs de démons~
-  SAY NAME2 ~Coeurs de démons~
+  SAY NAME1 ~Coeur de démon~
+  SAY NAME2 ~Coeur de démon~
   SAY DESC ~Vous avez vu Lysre arracher le coeur d'un démon et l'avaler d'un bloc. Depuis vous sentez parfois comme les échos d'une multitude de battements provenant d'elle.
 C'est toujours à ce moment qu'elle vous observe en souriant, comme si la sensation de malaise que vous ressentez l'amuse.~
 
@@ -450,7 +500,7 @@ COPY ~Lysre/items/CKclef.itm~ ~override~
 COPY ~Lysre/items/CKioniqu.itm~ ~override~
   SAY NAME1 ~Pierre de chair~
   SAY NAME2 ~Pierre de chair~
-  SAY DESC  ~Cette pierre ionique dégage l'odeur douceâtre du sang pourri. Constituée d'un mélange de chair humaine et de sang de dragon d'argent, il s'agit sans nul doute d'un objet profondement maléfique. Seuls les individus voués au mal sont capables de profiter du simple enchantement de protection qu'elle dispense.
+  SAY DESC  ~Cette pierre ionique dégage l'odeur douceâtre du sang pourri. Constituée d'un mélange de chair humaine et de sang de dragon d'argent, il s'agit sans nul doute d'un objet profondément maléfique. Seuls les individus voués au mal sont capables de profiter du simple enchantement de protection qu'elle dispense.
 
 PARAMETRES :
 
@@ -471,41 +521,39 @@ COPY ~Lysre/Sorts/CKsoin.spl~ ~override~
   SAY DESC ~~ // description identifiee pour les objets, pas utilisee pour les sorts
 
 
-//INSTALLATION DU KIT PERSONNALISE DE DISCIPLE DE TIAMAT // Version revisitée avec l'aide de Derasiteur de la Couronne de Cuivre // TODO DOUBLE CHECK // TODO A7-ADD-KIT
-ADD_KIT ~CKTiamat~
-// Armes autorisée (toutes, le NPC a des armes non deplacables)
-~CKTiamat 1 0 1 1 0 0 0 0~ //clasweap.2da
-//Etoiles
-~CKTiamat 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //weapprof.2da
-// Pas de contraintes de caract, c'est un NPC
- // ajouté à la fin de ABCLASRQ.2da
- ~CKTiamat                1       1       1       1       1       1~
- // ajouté à la fin de ABCLSMOD.2da
- ~CKTiamat                1       1       1       1       1       1~
- // ajouté à la fin de ABDCDSRQ.2da
- ~CKTiamat                1       1       1       1       1       1~
- // ajouté à la fin de ABDCSCRQ.2da
- ~CKTiamat                1       1       1       1       1       1~
- // ajouté à la fin de ALIGNMNT.2da
- ~CKTiamat                1       1       1       1       1       1       1       1       1~
- // ajouté à la fin de DUALCLAS.2da
- ~CKTiamat                0       0       0       0       0       0~
- // chemin d'accès vers votre fichier 2da de type CLAB
- ~Lysre/Kit/Tiamat.2da~
- // races et classes de PJ autorisées à utiliser ce kit, provenant de KITTABLE.2da
- ~~ // Kit de NPC, pas de Pj  -> ajouté humain K_S_H pour tester.
-// indicateurs d'utilisabilité, ajouté à la fin  	de la nouvelle ligne dans    KITLIST.2da
- ~0x00004000	19~
- // Table de CHN à utiliser. Voir LUABBR.2da
- ~MA0~
-~* * * * * * * * * * * * * * * * * * * *~
-SAY @46 // nom kit
-SAY @46 // nom kit
-SAY @47 // Description kit
+//INSTALLATION DU KIT PERSONNALISE DE DISCIPLE DE TIAMAT // Version revisitée avec l'aide de Derasiteur de la Couronne de Cuivre 
 
-//Application du kit dans l'EE
-ACTION_IF GAME_IS ~BGEE BG2EE IWDEE EET~ THEN BEGIN
-	LAF fl#add_kit_ee	STR_VAR	kit_name = CKTiamat	END
+LAF ADD_KIT_EX
+INT_VAR
+  kit_class = 19
+  lower     = RESOLVE_STR_REF(@48)
+  mixed     = RESOLVE_STR_REF(@46)
+  help      = RESOLVE_STR_REF(@47)
+STR_VAR
+  kit_name  = ~CKTiamat~
+  unusable  = ~0x00004000~ // Sorcerer
+  hpclass   = ~HPDD~ // Dragon disciple HP progression for EE
+// Armes autorisée (toutes, le NPC a des armes non deplacables)
+  clasweap  = ~1 0 1 1 0 0 0 0~
+// Étoiles / Point de compétence
+  weapprof  = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+// Pas de contraintes de caractéristique, c'est un NPC
+  abclasrq  = ~1       1       1       1       1       1~
+  abclsmod  = ~1       1       1       1       1       1~ 
+  abdcdsrq  = ~1       1       1       1       1       1~
+  abdcscrq  = ~1       1       1       1       1       1~
+  alignmnt  = ~1       1       1       1       1       1       1       1       1~
+// Pas de jumelage
+  dualclas  = ~0       0       0       0       0       0~
+  clab_path = EVAL ~Lysre/Kit/Tiamat.2da~
+// races et classes de PJ autorisées à utiliser ce kit (humain = K_S_H)
+    //  kittable  = ~K_S_H    K_S_D   K_S_G   K_S_E   K_S_HE   K_S_HL   K_S_H~ // Sorcerer kit : to enable for PJ
+// Table de HLA à utiliser. Voir LUABBR.2da
+  luabbr    = ~MA0~
+    //  stweap    = ~~
+    //  bdstweap  = ~~
+RET
+  kit_id
 END
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

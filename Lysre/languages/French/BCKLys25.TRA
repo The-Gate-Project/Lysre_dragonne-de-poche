@@ -18,7 +18,7 @@
 @24   = ~Tu trouves ça "normale" Lysre ?~
 @25   = ~C'est ma destinée que ça me plaise ou non.~
 @26   = ~J'adore ça... Tuer les faibles, laisser leur corps dans mon sillage.~
-@27   = ~Et bien oui, quand j'aurais trouvé des mâles dignes de s'occuper de mes oeufs, ils auront un rôle similaire pour s'assurer que le meilleur subsiste.~
+@27   = ~Et bien oui, quand j'aurais trouvé des mâles dignes de s'occuper de mes œufs, ils auront un rôle similaire pour s'assurer que le meilleur subsiste.~
 @28   = ~*Lysre vous toise avec dédain* La destinée... Un jour Tiamat régnera, c'est la seule destinée qui mérite mon attention.~
 @29   = ~Voilà des propos plein d'intelligence <CHARNAME>! Poursuivons cette merveilleuse lancée !~
 
@@ -111,7 +111,7 @@
 @123  = ~Vous serez éternellement incapable de me comprendre Lysre.~
 
 //Sarevok
-@124  = ~On dirait que mon frère s'entoure d'étranges compagnons~ ~On dirait que ma soeur s'entoure d'étranges compagnons~
+@124  = ~On dirait que mon frère s'entoure d'étranges compagnons~ ~On dirait que ma sœur s'entoure d'étranges compagnons~
 @125  = ~Il est vrai que choisir un ancien ennemi qu'on a soit même tuer est un choix que beaucoup jugerait stupide.~
 @126  = ~<CHARNAME> a besoin de puissance pour parvenir à ses fins, c'était un choix logique.~
 @127  = ~Là encore, je trouve que pour un revenant, tu es exceptionnel... J'aurais peut-être préféré te voir à la place de <CHARNAME>. Je gage que ta compagnie aurait été des plus... amusantes...~
@@ -125,12 +125,12 @@
 @136  = ~He, Valygar, calmez-vous ! Lysre est notre compagnon, souvenez-vous !~
 @137  = ~Elle cherche juste à vous poussez à bout, ignorez là.~
 @138  = ~*Les ignorer*~
-@139  = ~Comme c'est touchant <CHARNAME> Je vais finir par croire que vous m'appreciez à ma juste valeur.~
+@139  = ~Comme c'est touchant <CHARNAME> Je vais finir par croire que vous m’appréciez à ma juste valeur.~
 @140  = ~Je ne verserai pas ton sang aujourd'hui, nous avons une quête à accomplir. Mais je te tuerai dragonne.~
 @150  = ~Je t'attendrai, te tuerai, et tu pourriras sous ton cabanon je te le promets.~
 
 //Viconia
 @141  = ~Lysre, pourquoi me fixe-tu ?~
-@142  = ~Je regrette ta fidélité à Shar. Une Drow aussi talentueuse que toi aurait été une si grande prêtresse pour Tiamat.~
-@143  = ~Nulle Drow ne se soumettrait à Tiamat ! La reine des dragons ne reconnait que ses propres enfants.~
+@142  = ~Je regrette ta fidélité à Shar. Une elfe noire aussi talentueuse que toi aurait été une si grande prêtresse pour Tiamat.~
+@143  = ~Nulle elfe noire ne se soumettrait à Tiamat ! La reine des dragons ne reconnaît que ses propres enfants.~
 @144  = ~Ton intelligence et ta culture t'honore, femelle, ça n'accentue que davantage ma déception.~

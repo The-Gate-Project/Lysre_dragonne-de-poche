@@ -20,7 +20,7 @@ Dites moi <CHARNAME>? Si j'en crois la vision que m'a accordée la Grande Tiamat
 @1009    = ~*Ça suffit Lysre!*~
 @1010    = ~*Laisser faire*~
 
-@1011    = ~*Tout à coup, vous sentez une violente douleur vous prendre au coeur, votre vision se noircie brutalement et vos jambes commencent à trembler.
+@1011    = ~*Tout à coup, vous sentez une violente douleur vous prendre au cœur, votre vision se noircie brutalement et vos jambes commencent à trembler.
 Puis tout aussi rapidement, la douleur cesse, mis à part la légère trace des crocs de Lysre sur votre peau, rien ne témoigne de cette sensation glaciale.* ~
 @1012    = ~Qu'est ce que c'était !*~
 @1013    = ~Lysre !~
@@ -31,7 +31,7 @@ Puis tout aussi rapidement, la douleur cesse, mis à part la légère trace des 
 @1017    = ~Mais pourquoi !~
 @1018    = ~L'ignorer et partir~
 
-@1019    = ~*Lysre sourit* Cela m'est impossible de vous prélever une étincelle de plus, je ne peux vous nuir <CHARNAME>, c'est dans notre contrat. Et ma parole est absolue (ricane)~
+@1019    = ~*Lysre sourit* Cela m'est impossible de vous prélever une étincelle de plus, je ne peux vous nuire <CHARNAME>, c'est dans notre contrat. Et ma parole est absolue (ricane)~
 @1020    = ~Même si celle de Bhaal est infâme selon l'avis de beaucoup. Elle a le goût de la mort, et de la putréfaction... Pourquoi me priver d'un peu d'essence de Divinité dotée d'une telle saveur ? C'est un plat de choix.~
 @1021    = ~Merci encore <CHARNAME>! Votre générosité vous honore (ricane)~
 
@@ -79,11 +79,11 @@ Puis tout aussi rapidement, la douleur cesse, mis à part la légère trace des 
 //Viconia  2200///////////////////////////////////////////////////////////////////////////////////////////////
 //N?1
 @2200  = ~*Lysre s'approche de Viconia, avec pour une fois un semblant de respect dans le mouvement*~
-@2201  = ~Tu es une Drow intéressante, Viconia, tu dois supporter ces bipèdes de la surface, alors qu'ils te méprisent tous.~
+@2201  = ~Tu es une elfe noire intéressante, Viconia, tu dois supporter ces bipèdes de la surface, alors qu'ils te méprisent tous.~
 @2202  = ~Je n'ai pas eu le choix de quitter l'Ombreterre. La plupart des surfaciens me méprisent, oui, mais je m'en moque.~
 @2203  = ~La plupart... Je suppose que tu parles de <CHARNAME> c'est vrai que l'Enfant de Bhaal est un peu... à part.~
 @2204  = ~Effectivement. <CHARNAME> m'a sauvée deux fois la vie, quand des habitants de la surface voulaient ma mort juste à cause de mes origines. Je lui rendrai la pareille.~
-@2205  = ~Comme je disais, une Drow intéressante. <CHARNAME> sait bien s'entourer.~
+@2205  = ~Comme je disais, une elfe noire intéressante. <CHARNAME> sait bien s'entourer.~
 
 //Aerie   2300////////////////////////////////////////////////////////////////////////////////////////////////
 //N?1
@@ -91,11 +91,11 @@ Puis tout aussi rapidement, la douleur cesse, mis à part la légère trace des 
 @2301   = ~Que... La gallinule? C'est à moi que tu parles?~
 @2302   = ~Évidemment ! Tu es une elfe incapable de voler ! (Ricane) D'ailleurs, ma question : Ça te fait quoi d'être clouée au sol ?~
 @2303   = ~(Hoquet) Je... M... Laisse moi ! ~
-@2304   = ~*Tout en ricanant, la dragonne s'amuse à suivre un peu Aérie avant de se lasser et de retourner à ses occupations*~
+@2304   = ~*Tout en ricanant, la dragonne s'amuse à suivre un peu Aerie avant de se lasser et de retourner à ses occupations*~
 
 //Minsc   2400//////////////////////////////////////////////////////////////////////////////////////////////////
 //N?1
-@2400  = ~Minsc, ça fait un moment que tu me fixes. Tu veux perdre un oeil? ~
+@2400  = ~Minsc, ça fait un moment que tu me fixes. Tu veux perdre un œil? ~
 @2401  = ~Bouh a le poil tout hérissé à cause de toi. Voit, on dirait un hérisson!~
 @2402  = ~Et bien il faut reconnaître que ton rongeur a plus d'intelligence que la moyenne des bipèdes que j'ai croisé, son maître y compris~
 @2403  = ~(Squiik !)~
@@ -168,7 +168,7 @@ Puis tout aussi rapidement, la douleur cesse, mis à part la légère trace des 
 @3201  = ~J'ai tué un mioche dans les bras de sa mère !~
 @3202  = ~J'ai mangé une humaine devant les yeux de sa portée !~
 @3203  = ~J'ai coupé un type en deux, il courrait encore comme un cafard !~
-@3204  = ~J'ai dissous le visage d'une gosse qui s'en pamait !~
+@3204  = ~J'ai dissous le visage d'une gosse qui s'en pâmait !~
 @3205  = ~*Regard mauvais*~
 @3206  = ~*Shhhhhhh!*~
 @3205  = ~*Rire* Je t'aime bien !~
