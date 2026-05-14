@@ -507,18 +507,31 @@ PARAMETRES :
 Bonus de Classe d'Armure : +1
 Poids : 2~
 
-//Ajout de sorts///////////////////////////////////////////////////// // TODO DOUBLE CHECK
+//Ajout de sorts///////////////////////////////////////////////////// // TODO DOUBLE CHECK // GREEHIT.PRO
+
+COPY ~Lysre/Pro/CKhdfbr.bam~ ~override~
+
+ADD_PROJECTILE ~Lysre/Pro/CKddbre.pro~
+
 COPY ~Lysre/Sorts/CKsoufle.spl~ ~override~
   SAY NAME1 @3000 // nom avant identification pour les objets OU nom de sort
   SAY NAME2 @3000 // nom identifie pour les objets ; pas utilise pour les sorts
   SAY UNIDENTIFIED_DESC @3001 // description avant identification pour les objets, description de sort pour les sorts
   SAY DESC ~~ // description identifiee pour les objets, pas utilisee pour les sorts
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			projectile  = EVAL  ~%CKddbre%~
+	END
+// 272-Green_Dragon_Breath (DRAGGREE) 55-Sparkle_Green (SPARKLGR) 157-Sparkle_Area_Green (SPKLARGR) 335-Black_Dragon_Breath_HIT (cddrblck)
+// 65-Gaze (GAZE) 95-Cloud (CLOUD) 101-Grease (GREASE) 108-Acid_Blob (ACIDBLOB) 247-Black_Dragon_Breath (DRAGBLCK) 272-Green_Dragon_Breath (DRAGGREE)
 
 COPY ~Lysre/Sorts/CKsoin.spl~ ~override~
   SAY NAME1 @3002 // nom avant identification pour les objets OU nom de sort
   SAY NAME2 @3002 // nom identifie pour les objets ; pas utilise pour les sorts
   SAY UNIDENTIFIED_DESC @3003  // description avant identification pour les objets, description de sort pour les sorts
   SAY DESC ~~ // description identifiee pour les objets, pas utilisee pour les sorts
+
+COPY ~Lysre/Sorts/CKTiamat.spl~ ~override~
 
 
 //INSTALLATION DU KIT PERSONNALISE DE DISCIPLE DE TIAMAT // Version revisitée avec l'aide de Derasiteur de la Couronne de Cuivre 
@@ -545,11 +558,11 @@ STR_VAR
   alignmnt  = ~1       1       1       1       1       1       1       1       1~
 // Pas de jumelage
   dualclas  = ~0       0       0       0       0       0~
-  clab_path = EVAL ~Lysre/Kit/Tiamat.2da~
+  clab_path = EVAL ~Lysre/Kit/CKTiam.2da~
 // races et classes de PJ autorisées à utiliser ce kit (humain = K_S_H)
     //  kittable  = ~K_S_H    K_S_D   K_S_G   K_S_E   K_S_HE   K_S_HL   K_S_H~ // Sorcerer kit : to enable for PJ
 // Table de HLA à utiliser. Voir LUABBR.2da
-  luabbr    = ~MA0~
+  luabbr    = ~Ma0~
     //  stweap    = ~~
     //  bdstweap  = ~~
 RET

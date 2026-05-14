@@ -3,6 +3,14 @@
 //Ecaille dragon argent : OHDSCALE.ITM
 //Coeur de Bodhi : MISCBP.ITM
 
+IF
+	Global("CKLysreKit","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CKLysreKit","LOCALS",1)
+		ApplySpellRES("CKTiamat",Myself)
+END
+
 ////////////////////////////////////////////////////////////////////////////
 //Lancer le premier dialogue avec le joueur/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
@@ -218,6 +226,7 @@ InParty(Myself)
 Global("CKLysreExperienceSet","GLOBAL",0)
 XPGT(Player1,600000)
 XPLT(Player1,1000001)
+XPLT(Myself,600000)
 THEN
 RESPONSE #100
 SetGlobal("CKLysreExperienceSet","GLOBAL",1)
@@ -230,6 +239,7 @@ InParty(Myself)
 Global("CKLysreExperienceSet","GLOBAL",0)
 XPGT(Player1,1000000)
 XPLT(Player1,1400001)
+XPLT(Myself,1000000)
 THEN
 RESPONSE #100
 SetGlobal("CKLysreExperienceSet","GLOBAL",1)
@@ -242,6 +252,7 @@ InParty(Myself)
 Global("CKLysreExperienceSet","GLOBAL",0)
 XPGT(Player1,1400000)
 XPLT(Player1,1800001)
+XPLT(Myself,1400000)
 THEN
 RESPONSE #100
 SetGlobal("CKLysreExperienceSet","GLOBAL",1)
@@ -253,6 +264,7 @@ IF
 InParty(Myself)
 Global("CKLysreExperienceSet","GLOBAL",0)
 XPGT(Player1,1800000)
+XPLT(Myself,1800000)
 THEN
 RESPONSE #100
 SetGlobal("CKLysreExperienceSet","GLOBAL",1)
