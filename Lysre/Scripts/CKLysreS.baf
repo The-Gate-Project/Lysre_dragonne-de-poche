@@ -212,6 +212,28 @@ END
 //////////////////////////////////////////////////////////////////////////////////////////
 //Equilibrer l'xp ////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
+IF
+InParty(Myself)
+Global("CKLysreExperienceSet","GLOBAL",0)
+XPLT(Player1,280001)
+THEN
+RESPONSE #100
+SetGlobal("CKLysreExperienceSet","GLOBAL",1)
+Continue()
+END
+
+IF
+InParty(Myself)
+Global("CKLysreExperienceSet","GLOBAL",0)
+XPGT(Player1,280000)
+XPLT(Player1,600001)
+XPLT(Myself,280000)
+THEN
+RESPONSE #100
+SetGlobal("CKLysreExperienceSet","GLOBAL",1)
+AddXPObject("CKLysre",239000)
+Continue()
+END
 // 800000
 IF
 InParty(Myself)

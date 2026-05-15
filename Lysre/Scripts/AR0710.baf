@@ -23,6 +23,7 @@ THEN
 END
 //////////////////////////////////////////////////////
 */
+/*
 // Maj XP ////////////////////////////////////////////
 IF
 InParty("CKLysre")
@@ -68,3 +69,4 @@ SetGlobal("CKLysreXP","GLOBAL",1)
 AddXPObject("CKLysre",1039000)
 Continue()
 END
+*/

@@ -355,9 +355,9 @@ REPLACE ~99999~ @45
 
 	END // GAME_IS ~tob bg2ee eet bgt~
 
-APPEND ~interdia.2da~ ~CKLysre       BCKLysre       BCKLys25~ UNLESS ~CKLysre~
+APPEND ~interdia.2da~ ~CKLysre     BCKLysre     BCKLys25~ UNLESS ~CKLysre~
 
-APPEND ~pdialog.2da~ ~CKLysre        CKLysreP             CKLysreJ            CKLysreD             CKLys25P             CKLys25J             CKLys25D       CKLys25S~ UNLESS ~CKLysre~
+APPEND ~pdialog.2da~ ~CKLysre     CKLysreP     CKLysreJ     CKLysreD     CKLys25P     CKLys25J     CKLys25D     CKLys25S~ UNLESS ~CKLysre~
 
 //////////////////////////////////////
 
@@ -384,7 +384,7 @@ ACTION_IF GAME_IS ~eet~ BEGIN
       cre_ToB = "CKLysr25"
       traFile = EVAL "weidu_external/Lysre/Languages/autotra/%LANGUAGE%/SETUP-Lysre.tra"
       string = "@49"
-      stringPosDV = "Minsc"
+      stringPosDV = "Mkhiin"
       clean_ToB_DV = "Lysre"
   END
 END ELSE BEGIN
@@ -565,7 +565,7 @@ STR_VAR
   clab_path = EVAL ~Lysre/Kit/CKTiam.2da~
 // races et classes de PJ autorisées à utiliser ce kit (humain = K_S_H)
     //  kittable  = ~K_S_H    K_S_D   K_S_G   K_S_E   K_S_HE   K_S_HL   K_S_H~ // Sorcerer kit : to enable for PJ
-  kittable  = ~0       0       0       0       0       0       0~ // Sorcerer kit
+  kittable  = ~~ // Sorcerer kit
 // Table de HLA à utiliser. Voir LUABBR.2da
   luabbr    = ~Ma0~
     //  stweap    = ~~
