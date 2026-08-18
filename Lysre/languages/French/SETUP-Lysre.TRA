@@ -248,10 +248,16 @@ D'un contact, Lysre soigne 1d8 points de blessures ou autres dégâts infligés 
 La guérison n'est définitive que dans la mesure où la créature ne subit pas d'autres dégâts ; les blessures provoquées se cicatriseront (ou peuvent être soignées) comme n'importe quelle blessure normale.~
 
 //////////////////////////////////////////////
-@3004 =  ~~
-@3005 =  ~~
-@3006 =  ~~
-@3007 =  ~~
+@3004 =  ~Cœur de démon~
+@3005 =  ~Vous avez vu Lysre arracher le cœur d'un démon et l'avaler d'un bloc. Depuis vous sentez parfois comme les échos d'une multitude de battements provenant d'elle.
+C'est toujours à ce moment qu'elle vous observe en souriant, comme si la sensation de malaise que vous ressentez l'amuse.~
+@3006 =  ~Pierre de chair~
+@3007 =  ~Cette pierre ionique dégage l'odeur douceâtre du sang pourri. Constituée d'un mélange de chair humaine et de sang de dragon d'argent, il s'agit sans nul doute d'un objet profondément maléfique. Seuls les individus voués au mal sont capables de profiter du simple enchantement de protection qu'elle dispense.
+
+PARAMETRES :
+
+Bonus de Classe d'Armure : +1
+Poids : 2~
 @3008 =  ~~
 @3009 =  ~~
 @3010 =  ~~

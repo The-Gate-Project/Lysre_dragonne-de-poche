@@ -8,7 +8,7 @@ BEGIN CKLys25J
 
 //Antichambre
 
-I_C_T2 BOTSMITH 152 CKLysreCespenarNobody1
+I_C_T2 BOTSMITH 152 CKLysreCespenarNobody1 // TODO I_C_T
 == CKLys25J IF ~Name("CKLysre",LastTalkedToBy)~ THEN @3
 END
 
@@ -19,7 +19,7 @@ I_C_T GORPOL1 1 CKLysreMetKnightsOfTheVigil1
 == CKLys25J IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @14
 END
 
-I_C_T2 GORCHR 11 CKLysreChromaticDemon2
+I_C_T2 GORCHR 11 CKLysreChromaticDemon2 // TODO I_C_T
 == CKLys25J IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @15
 END
 
@@ -42,7 +42,7 @@ END
 // Tour de garde SoA ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-I_C_T2 GORCHR 11 CKLysreChromaticDemon2
+I_C_T2 GORCHR 11 CKLysreChromaticDemon2 // TODO I_C_T
 == CKLysreJ IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @20
 END
 

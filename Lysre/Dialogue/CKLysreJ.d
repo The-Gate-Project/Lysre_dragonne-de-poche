@@ -223,11 +223,11 @@ END
 
 // Bridge misc
 
-I_C_T2 HLSHANG 0 CKLysreShangalar1
+I_C_T2 HLSHANG 0 CKLysreShangalar1 // TODO I_C_T
 == CKLysreJ IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID)~ THEN @19
 END
 
-I_C_T2 NEB 5 CKLysreNeb1
+I_C_T2 NEB 5 CKLysreNeb1 // TODO I_C_T
 == CKLysreJ IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID)~ THEN @20
 END
 
@@ -319,7 +319,7 @@ I_C_T UDSILVER 35 CKLysreTurnedToDrow1
 == CKLysreJ IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID)~ THEN @43
 END
 
-I_C_T2 UDSOLA01 10 CKLysreMetSoulafein1
+I_C_T2 UDSOLA01 10 CKLysreMetSoulafein1 // TODO I_C_T
 == CKLysreJ IF ~InParty("CKLysre") InMyArea("CKLysre") !StateCheck("CKLysre",CD_STATE_NOTVALID)~ THEN @44
 END
 

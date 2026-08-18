@@ -74,6 +74,7 @@ AUTO_TRA ~weidu_external/Lysre/Languages/autotra/%s~
 LANGUAGE ~French~
 		 ~French~
 		 ~Lysre/Languages/French/Setup-Lysre.tra~
+
 LANGUAGE ~Simplified Chinese~
 		 ~SChinese~
 		 ~Lysre/Languages/SChinese/Setup-Lysre.tra~
@@ -337,7 +338,7 @@ WRITE_ASCII SCRIPT_GENERAL ~CKLysefS~  #8
 WRITE_ASCII DIALOG ~CKLysr25~  #8
 	WRITE_LONG 0x28 IDS_OF_SYMBOL ("ANIMATE" "CKLysre_dragon")
 
-COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/BCKLys25.d~ // TODO DOUBLE CHECK
+COMPILE EVALUATE_BUFFER ~Lysre/Dialogue/BCKLys25.d~ // TODO DOUBLE CHECK traify !!
 						~Lysre/Dialogue/CKLysr25.d~
 						~Lysre/Dialogue/CKLys25J.d~
 						~Lysre/Dialogue/CKLys25P.d~
@@ -357,9 +358,12 @@ REPLACE ~99999~ @45
 
 	END // GAME_IS ~tob bg2ee eet bgt~
 
-APPEND ~interdia.2da~ ~CKLysre     BCKLysre     BCKLys25~ UNLESS ~CKLysre~
+APPEND ~interdia.2da~ ~CKLysre           BCKLysre           BCKLys25~
+	UNLESS ~CKLysre~
 
-APPEND ~pdialog.2da~ ~CKLysre     CKLysreP     CKLysreJ     CKLysreD     CKLys25P     CKLys25J     CKLys25D     CKLys25S~ UNLESS ~CKLysre~
+//						DEATHVAR		POST_DIALOG			JOIN_DIALOG			DREAM_SCRIPT		25POST_DIALOG	25JOIN_DIALOG		25DREAM_SCRIPT		25OVERRIDE_SCRIPT
+APPEND ~pdialog.2da~	~CKLysre           CKLysreP           CKLysreJ           CKLysreD           CKLys25P           CKLys25J           CKLys25D           CKLys25S~
+	UNLESS ~CKLysre~
 
 //////////////////////////////////////
 
@@ -386,7 +390,7 @@ ACTION_IF GAME_IS ~eet~ BEGIN
       cre_ToB = "CKLysr25"
       traFile = EVAL "weidu_external/Lysre/Languages/autotra/%LANGUAGE%/SETUP-Lysre.tra"
       string = "@49"
-      stringPosDV = "Mkhiin"
+      stringPosDV = "Mazzy"
       clean_ToB_DV = "Lysre"
   END
 END ELSE BEGIN
@@ -410,10 +414,10 @@ COPY ~Lysre/items/coeur1.itm~ ~override/CKcoeur1.ITM~
 
 /////////////////////////////////////////////////////////////////////
 COPY ~Lysre/items/coeur2.itm~ ~override/CKcoeur2.ITM~
-  SAY NAME1 ~Coeur de démon~
-  SAY NAME2 ~Coeur de démon~
-  SAY DESC ~Vous avez vu Lysre arracher le coeur d'un démon et l'avaler d'un bloc. Depuis vous sentez parfois comme les échos d'une multitude de battements provenant d'elle.
-C'est toujours à ce moment qu'elle vous observe en souriant, comme si la sensation de malaise que vous ressentez l'amuse.~
+  SAY NAME1 @3004 /* ~Cœur de démon~ */
+  SAY NAME2 @3004 /* ~Cœur de démon~ */
+  SAY DESC @3005 /* ~Vous avez vu Lysre arracher le cœur d'un démon et l'avaler d'un bloc. Depuis vous sentez parfois comme les échos d'une multitude de battements provenant d'elle.
+C'est toujours à ce moment qu'elle vous observe en souriant, comme si la sensation de malaise que vous ressentez l'amuse.~ */
 
 /////////////////////////////////////////////////////////////////////
 COPY ~Lysre/items/ecaille2.itm~ ~override/CKaille2.ITM~
@@ -500,14 +504,14 @@ COPY ~Lysre/items/CKclef.itm~ ~override~
 
 /////////////////////////////////////////////////////////////////////
 COPY ~Lysre/items/CKioniqu.itm~ ~override~
-  SAY NAME1 ~Pierre de chair~
-  SAY NAME2 ~Pierre de chair~
-  SAY DESC  ~Cette pierre ionique dégage l'odeur douceâtre du sang pourri. Constituée d'un mélange de chair humaine et de sang de dragon d'argent, il s'agit sans nul doute d'un objet profondément maléfique. Seuls les individus voués au mal sont capables de profiter du simple enchantement de protection qu'elle dispense.
+  SAY NAME1 @3006 /* ~Pierre de chair~ */ 
+  SAY NAME2 @3006 /* ~Pierre de chair~ */ 
+  SAY DESC @3007  /* ~Cette pierre ionique dégage l'odeur douceâtre du sang pourri. Constituée d'un mélange de chair humaine et de sang de dragon d'argent, il s'agit sans nul doute d'un objet profondément maléfique. Seuls les individus voués au mal sont capables de profiter du simple enchantement de protection qu'elle dispense.
 
 PARAMETRES :
 
 Bonus de Classe d'Armure : +1
-Poids : 2~
+Poids : 2~ */
 
 //Ajout de sorts/////////////////////////////////////////////////////
 
