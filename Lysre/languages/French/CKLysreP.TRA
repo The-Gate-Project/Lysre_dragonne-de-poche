@@ -1,2 +1,11 @@
-//.Dialogue encore en dur  
-
+@0    = ~J'en ai assez de vous, de vos manières. Puissiez vous vous étouffer dans votre sommeil et finir au plus profond des enfers.~
+@1    = ~Je vous avais prévenu <CHARNAME> Je ne suis pas un chien vous suivant selon votre bon vouloir. Vous venez de rompre notre contrat. J'en ai assez de vous, de vos manières. Puissiez vous vous étouffer dans votre sommeil et finir au plus profond des enfers.~
+@2    = ~Un instant ? J'ai du mal comprendre, vous me demandez de partir?! Vous devez rester près de moi, vous vous en souvenez?~
+@3    = ~Mais pas du tout Lysre. Reprenons notre route.~
+@4    = ~Nos routes doivent se séparer un moment, retrouvez moi à la promenade de Waukyne.~
+@5    = ~Écoute, j'ai "besoin" que tu m'attendes ici un moment.~
+@6    = ~Enfin vous revoilà, qu'attendiez vous pour venir me chercher ?~
+@7    = ~J'ai eu un petit contretemps, reprenons notre chemin ensemble Lysre.~
+@8    = ~J'ai besoin d'encore un peu de temps. Désole.~
+@9    = ~Bien, mais notez ceci <CHARNAME> c'est la seule et unique dernière fois que je tolère vos caprices, <CHARNAME>~
+@10   = ~Je vous avais prévenu <CHARNAME> Je ne suis pas un chien vous suivant selon votre bon vouloir. Vous voulez rompre notre contrat ? ET BIEN D'ACCORD ! J'en ai assez de vous, de vos manières. Puissiez vous vous étouffer dans votre sommeil et finir au plus profond des enfers.~

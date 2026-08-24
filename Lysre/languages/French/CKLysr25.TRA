@@ -1,1 +1,15 @@
-//.Dialogue encore en dur  
+@0    = ~Enfin, qu'attendiez vous donc ?~
+@1    = ~J'ai eu un petit contretemps, comme tu peux le remarquer, nous sommes...~
+@2    = ~Oui, oui, Bhaal, les enfers. Blablabla, ne suis-je pas plus importante que tous ces détails ?~
+@3    = ~Évidemment, te faire venir ici est la première chose à laquelle j'ai pensé !~
+@4    = ~Certainement pas, je t'ai convoquée afin de te renvoyer proprement et définitivement.~
+@5    = ~Alors ?~
+@6    = ~Alors quoi ?~
+@7    = ~Tu as grandi pour devenir plus belle et acide que jamais.~
+@8    = ~Tu as grandi pour devenir plus belle et sombre que jamais.~
+@9    = ~Soit maudit <CHARNAME> de rompre notre engagement après tout ce que j'ai fait pour toi... Compte sur moi pour ne jamais oublier ce moment. Pour te le faire payer, j'ai l'éternité devant moi pour te rendre la pareille.~
+@10   = ~Bien, alors continuons mon... Notre aventure !~
+@11   = ~Vous n'avez rien à me dire ?~
+@12   = ~Non, rien de rien, ne me dis pas que tu es en manque d'attention...~
+@13   = ~Tu as grandi et tu es plus belle que jamais.~
+@14   = ~(Lysre émet un sifflement et se détourne de vous)~
