@@ -27,9 +27,9 @@ THEN
 	RESPONSE #100
 		ClearAllActions()
 		StartCutSceneMode()
-		CutSceneId(Player1)
+		CutSceneId("CKLysre")
 //		Spell("CKMORTIN",WIZARD_MELF_ACID_ARROW)
-		ActionOverride("CKLysre",ApplySpell("CKMORTIN",WIZARD_MELF_ACID_ARROW))
+		ApplySpell("CKMORTIN",WIZARD_MELF_ACID_ARROW)
 		Wait(1)
 		Kill("CKMORTIN")
 		Wait(1)
